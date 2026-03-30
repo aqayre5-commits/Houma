@@ -145,6 +145,17 @@ export function ServiceIntentResolver({
           : 'Choisissez seulement la ville pour ouvrir la page service. Vous pourrez ajouter une zone plus tard si vous avez besoin d’une réponse locale plus précise.'}
       </p>
 
+      <div className="mt-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+        <p className="font-semibold">
+          {isAr ? 'لماذا نطلب الموقع الدقيق؟' : 'Pourquoi demander la position précise ?'}
+        </p>
+        <p className="mt-1">
+          {isAr
+            ? 'نستعمل الموقع الدقيق فقط لتحديد المدينة أو المنطقة المناسبة لهذه الخدمة عندما يكون ذلك مفيداً. إذا لم ترغب في مشاركته، يمكنك اختيار المدينة يدوياً.'
+            : 'Nous utilisons la position précise seulement pour identifier la bonne ville ou la bonne zone quand cela améliore la réponse pour cette démarche. Si vous préférez, vous pouvez choisir la ville manuellement.'}
+        </p>
+      </div>
+
       {detectedLocationLabel ? (
         <div className="mt-3 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           <p className="font-semibold">
@@ -223,18 +234,18 @@ export function ServiceIntentResolver({
       <div className="mt-4 flex flex-wrap gap-2">
         <button
           type="button"
-          onClick={handleContinue}
-          disabled={!selectedCity}
-          className="rounded-2xl bg-teal-700 px-5 py-3 text-sm font-medium text-cyan-50 disabled:cursor-not-allowed disabled:bg-slate-300"
+          onClick={handlePreciseLocation}
+          className="rounded-2xl bg-teal-700 px-5 py-3 text-sm font-medium text-cyan-50 hover:bg-teal-800"
         >
-          {isAr ? 'فتح صفحة الخدمة' : 'Ouvrir la page service'}
+          {isAr ? 'استخدم موقعي الدقيق' : 'Utiliser ma position précise'}
         </button>
         <button
           type="button"
-          onClick={handlePreciseLocation}
-          className="rounded-2xl border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 hover:border-teal-300 hover:text-teal-700"
+          onClick={handleContinue}
+          disabled={!selectedCity}
+          className="rounded-2xl border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 hover:border-teal-300 hover:text-teal-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {isAr ? 'استخدم الموقع الدقيق' : 'Utiliser la position précise'}
+          {isAr ? 'المتابعة يدوياً' : 'Continuer manuellement'}
         </button>
       </div>
     </section>

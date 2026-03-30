@@ -20,18 +20,32 @@ test('homepage service search can open a city service page without local-area se
   await expect(page).toHaveURL('/villes/casablanca/demarches/passeport-marocain')
 })
 
-test('homepage service choice can route directly to the service page with current detected city context', async ({ browser }) => {
+test('homepage service choice can route directly to the service page with precise detected city context', async ({ browser }) => {
   const context = await browser.newContext({
-    extraHTTPHeaders: {
-      'x-vercel-ip-country': 'MA',
-      'x-vercel-ip-city': 'Casablanca',
-      'x-vercel-ip-postal-code': '20470',
-    },
+    permissions: ['geolocation'],
+    geolocation: { latitude: 33.5731, longitude: -7.5898 },
   })
   const page = await context.newPage()
+  await page.route('**/api/reverse-geocode**', async (route) => {
+    await route.fulfill({
+      json: {
+        ok: true,
+        localAddress: 'Centre, Casablanca',
+        detail: {
+          road: null,
+          neighbourhood: 'Centre',
+          suburb: 'Centre',
+          district: 'Centre',
+          city: 'Casablanca',
+          region: 'Casablanca-Settat',
+          postcode: '20470',
+        },
+      },
+    })
+  })
   await page.goto('http://127.0.0.1:3000/')
   await page.getByRole('link', { name: /Passeport marocain/ }).first().click()
-  await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/passeport-marocain\?source=ip.*confidence=medium/)
+  await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/passeport-marocain\?source=gps.*confidence=/)
   await context.close()
 })
 
@@ -49,18 +63,32 @@ test('city page prioritizes service content over local-area refinement', async (
   expect(searchBox!.y).toBeLessThan(refineBox!.y)
 })
 
-test('all services page routes through the same final city service page when current city detection is available', async ({ browser }) => {
+test('all services page routes through the same final city service page when precise city detection is available', async ({ browser }) => {
   const context = await browser.newContext({
-    extraHTTPHeaders: {
-      'x-vercel-ip-country': 'MA',
-      'x-vercel-ip-city': 'Casablanca',
-      'x-vercel-ip-postal-code': '20470',
-    },
+    permissions: ['geolocation'],
+    geolocation: { latitude: 33.5731, longitude: -7.5898 },
   })
   const page = await context.newPage()
+  await page.route('**/api/reverse-geocode**', async (route) => {
+    await route.fulfill({
+      json: {
+        ok: true,
+        localAddress: 'Centre, Casablanca',
+        detail: {
+          road: null,
+          neighbourhood: 'Centre',
+          suburb: 'Centre',
+          district: 'Centre',
+          city: 'Casablanca',
+          region: 'Casablanca-Settat',
+          postcode: '20470',
+        },
+      },
+    })
+  })
   await page.goto('http://127.0.0.1:3000/demarches')
   await page.getByRole('link', { name: /Passeport marocain/ }).first().click()
-  await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/passeport-marocain\?source=ip.*confidence=medium/)
+  await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/passeport-marocain\?source=gps.*confidence=/)
   await context.close()
 })
 
@@ -90,18 +118,32 @@ test('change area flow preserves the current service from the service page', asy
   await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/attestation-residence/)
 })
 
-test('known city detection routes directly to the final service page', async ({ browser }) => {
+test('known precise location routes directly to the final service page', async ({ browser }) => {
   const context = await browser.newContext({
-    extraHTTPHeaders: {
-      'x-vercel-ip-country': 'MA',
-      'x-vercel-ip-city': 'Rabat',
-      'x-vercel-ip-postal-code': '10080',
-    },
+    permissions: ['geolocation'],
+    geolocation: { latitude: 34.0209, longitude: -6.8416 },
   })
   const page = await context.newPage()
+  await page.route('**/api/reverse-geocode**', async (route) => {
+    await route.fulfill({
+      json: {
+        ok: true,
+        localAddress: 'Centre, Rabat',
+        detail: {
+          road: null,
+          neighbourhood: 'Centre',
+          suburb: 'Centre',
+          district: 'Centre',
+          city: 'Rabat',
+          region: 'Rabat-Salé-Kénitra',
+          postcode: '10080',
+        },
+      },
+    })
+  })
   await page.goto('http://127.0.0.1:3000/')
   await page.getByRole('link', { name: /Passeport marocain/ }).first().click()
-  await expect(page).toHaveURL(/\/villes\/rabat\/demarches\/passeport-marocain\?source=ip&confidence=medium/)
+  await expect(page).toHaveURL(/\/villes\/rabat\/demarches\/passeport-marocain\?source=gps.*confidence=/)
   await context.close()
 })
 

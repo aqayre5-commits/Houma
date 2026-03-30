@@ -1,13 +1,12 @@
 import Link from 'next/link'
-import { headers } from 'next/headers'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { PageViewTracker } from '@/components/page-view-tracker'
 import { ServiceIntentResolver } from '@/components/service-intent-resolver'
 import { getMasterService } from '@/lib/content'
 import { getLang } from '@/lib/lang'
-import { getDetectedLocationContextFromHeaders, getDetectedLocationLabelFromHeaders } from '@/lib/location-ip'
 import { routes } from '@/lib/routes'
 import { buildMetadata } from '@/lib/seo'
+import { createEmptyDetectedLocationContext } from '@/lib/resolver'
 import type { LocationDetectionSource } from '@/types/models'
 
 export const revalidate = 86400
@@ -39,25 +38,14 @@ export default async function ServicePage({ params, searchParams }: Props) {
 
   const lang = await getLang()
   const isAr = lang === 'ar'
-  const headerStore = await headers()
-  const initialDetectedContext = getDetectedLocationContextFromHeaders(headerStore)
-  const unsupportedDetectedLabel = detectedLabel ?? getDetectedLocationLabelFromHeaders(headerStore)
+  const initialDetectedContext = createEmptyDetectedLocationContext()
+  const unsupportedDetectedLabel = detectedLabel ?? null
   const searchParamSource: LocationDetectionSource | null =
     source === 'none' || source === 'ip' || source === 'gps' || source === 'ip_gps' || source === 'manual'
       ? source
       : null
   const detectedLocationSource =
     searchParamSource ?? (unsupportedDetectedLabel ? initialDetectedContext.source : null)
-
-  if (initialDetectedContext.citySlug) {
-    redirect(
-      routes.cityService(initialDetectedContext.citySlug, record.slug, {
-        localAreaSlug: initialDetectedContext.confidence === 'high' ? initialDetectedContext.localAreaSlug : null,
-        source: initialDetectedContext.source,
-        confidence: initialDetectedContext.confidence,
-      }),
-    )
-  }
 
   return (
     <div className="container-shell mobile-safe-spacing py-8 md:py-12">
@@ -76,8 +64,8 @@ export default async function ServicePage({ params, searchParams }: Props) {
             <h1 className="mt-1.5 text-3xl font-bold text-slate-900 md:text-4xl">{isAr ? record.titleAr : record.titleFr}</h1>
             <p className="mt-3 max-w-2xl text-slate-500">
               {isAr
-                ? 'سنحاول فتح صفحة الجواب النهائية مباشرة. إذا كانت المدينة غير معروفة، سنطلب فقط الحد الأدنى اللازم.'
-                : 'Nous essayons d’ouvrir directement la page réponse finale. Si la ville reste inconnue, nous ne demandons que le minimum nécessaire.'}
+                ? 'تستعمل Houma الموقع الدقيق فقط لتحديد المدينة والسياق المحلي بشكل أدق لهذه الخدمة. وإذا لم توافق، يمكنك المتابعة يدوياً.'
+                : 'Houma utilise la position précise uniquement pour identifier plus justement la ville et le contexte local de cette démarche. Si vous préférez, vous pouvez continuer manuellement.'}
             </p>
           </div>
 
@@ -92,19 +80,19 @@ export default async function ServicePage({ params, searchParams }: Props) {
 
         <aside className="space-y-4">
           <div className="card p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{isAr ? 'الجواب النهائي' : 'Page finale'}</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{isAr ? 'لماذا نطلب الموقع' : 'Pourquoi demander votre position'}</p>
             <p className="mt-2 text-sm text-slate-700">
               {isAr
-                ? 'ستنتقل إلى صفحة الخدمة داخل المدينة، حيث يظهر الجواب النهائي عن الجهة المختصة.'
-                : 'Vous arriverez sur la page service dans la ville, où apparaît la réponse finale.'}
+                ? 'بعض الإجراءات تعتمد على المدينة أو على المنطقة السكنية. لذلك يساعد الموقع الدقيق على الوصول إلى الجهة المسؤولة الصحيحة بسرعة أكبر.'
+                : 'Certaines démarches dépendent de la ville ou du contexte local de résidence. La position précise aide donc à atteindre plus vite la bonne autorité responsable.'}
             </p>
           </div>
           <div className="card p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{isAr ? 'إذا كانت المدينة غير معروفة' : 'If the city is still unknown'}</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">{isAr ? 'إذا لم تشارك موقعك' : 'Si vous ne partagez pas votre position'}</p>
             <p className="mt-2 text-sm text-slate-700">
               {isAr
-                ? 'سنطلب المدينة فقط، ويمكنك إضافة منطقة لاحقاً من داخل صفحة الخدمة.'
-                : 'Nous demandons ici seulement la ville. Vous pourrez ajouter une zone plus tard depuis la page service.'}
+                ? 'يمكنك اختيار المدينة يدوياً الآن، ثم إضافة منطقة لاحقاً من داخل صفحة الخدمة إذا احتجت إلى جواب محلي أدق.'
+                : 'Vous pouvez choisir la ville manuellement maintenant, puis ajouter une zone plus tard depuis la page service si vous avez besoin d’une réponse plus précise.'}
             </p>
           </div>
         </aside>

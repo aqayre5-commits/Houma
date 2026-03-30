@@ -98,7 +98,7 @@ test('critical path: homepage to city-service', async ({ page }) => {
   await page.getByRole('link', { name: /Passeport marocain/ }).first().click()
   await expect(page).toHaveURL('/demarches/passeport-marocain')
   await page.getByLabel('Ville').selectOption('casablanca')
-  await page.getByRole('button', { name: 'Ouvrir la page service' }).click()
+  await page.getByRole('button', { name: 'Continuer manuellement' }).click()
   await expect(page).toHaveURL(/\/villes\/casablanca\/demarches\/passeport-marocain\?source=manual&confidence=medium/)
 })
 

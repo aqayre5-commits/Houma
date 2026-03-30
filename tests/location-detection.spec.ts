@@ -29,30 +29,46 @@ test('homepage no longer renders the legacy area cards', async ({ page }) => {
   await expect(page.getByText('Choisir la zone manuellement')).toHaveCount(0)
 })
 
-test('supported IP city detection routes directly after service choice', async ({ browser }) => {
+test('direct service entry no longer auto-routes from IP city headers alone', async ({ browser }) => {
   const { context, page } = await openServiceWithHeaders(browser, {
     'x-vercel-ip-country': 'MA',
     'x-vercel-ip-city': 'Rabat',
     'x-vercel-ip-postal-code': '10080',
   })
 
-  await expect(page).toHaveURL(/\/villes\/rabat\/demarches\/attestation-residence\?source=ip&confidence=medium/)
+  await expect(page).toHaveURL(/\/demarches\/attestation-residence/)
+  await expect(page.getByText('Nous n’avons pas encore confirmé la ville')).toBeVisible()
   await context.close()
 })
 
-test('unsupported IP city falls back to compact service resolver', async ({ browser }) => {
-  const { context, page } = await openServiceWithHeaders(browser, {
-    'x-vercel-ip-country': 'MA',
-    'x-vercel-ip-city': 'Marrakech',
-    'x-vercel-ip-postal-code': '40000',
+test('unsupported precise GPS location is shown when outside supported cities', async ({ browser }) => {
+  const context = await browser.newContext({
+    permissions: ['geolocation'],
+    geolocation: { latitude: 31.6295, longitude: -7.9811 },
   })
-
-  await expect(page.getByText('Nous n’avons pas encore confirmé la ville')).toBeVisible()
-  await expect(page.getByText('Repère réseau approximatif : Marrakech')).toBeVisible()
-  await expect(page.getByText(/Cette indication réseau est approximative/)).toBeVisible()
-  await expect(page.getByLabel('Ville')).toHaveValue('')
-  await expect(page.getByLabel('Zone sélectionnée')).toHaveCount(0)
-  await expect(page.getByRole('button', { name: 'Confirmer la zone' })).toHaveCount(0)
+  const page = await context.newPage()
+  await page.route('**/api/reverse-geocode**', async (route) => {
+    await route.fulfill({
+      json: {
+        ok: true,
+        localAddress: 'Guéliz, Marrakech',
+        detail: {
+          road: null,
+          neighbourhood: 'Guéliz',
+          suburb: 'Guéliz',
+          district: 'Guéliz',
+          city: 'Marrakech',
+          region: 'Marrakech-Safi',
+          postcode: '40000',
+        },
+      },
+    })
+  })
+  await page.goto('http://127.0.0.1:3000/')
+  await page.getByRole('link', { name: /Attestation de résidence/ }).first().click()
+  await expect(page).toHaveURL(/\/demarches\/attestation-residence\?source=gps&confidence=unsupported/)
+  await expect(page.getByText('Position détectée : Guéliz, Marrakech')).toBeVisible()
+  await expect(page.getByText('Cette zone n’est pas encore couverte.')).toBeVisible()
   await context.close()
 })
 

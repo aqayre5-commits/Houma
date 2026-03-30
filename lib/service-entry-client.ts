@@ -2,40 +2,6 @@
 
 import { buildGpsDetectedContext, type ReverseGeocodeDetail } from '@/lib/location-gps'
 import { routes } from '@/lib/routes'
-import type { DetectedLocationContext } from '@/types/models'
-
-async function getIpDetectedContext(): Promise<{
-  context: DetectedLocationContext
-  detectedLabel: string | null
-}> {
-  const response = await fetch('/api/detect-location', {
-    cache: 'no-store',
-    signal: AbortSignal.timeout(4000),
-  })
-
-  const data = (await response.json()) as {
-    ok?: boolean
-    context?: DetectedLocationContext
-    detectedLabel?: string | null
-  }
-
-  return {
-    context: data.context ?? {
-      source: 'none',
-      citySlug: null,
-      neighborhoodSlug: null,
-      localAreaSlug: null,
-      postalCode: null,
-      latitude: null,
-      longitude: null,
-      accuracyMeters: null,
-      confidence: 'unsupported',
-      confirmedByUser: false,
-      conflictReason: null,
-    },
-    detectedLabel: data.detectedLabel ?? null,
-  }
-}
 
 async function getBrowserPosition() {
   return new Promise<GeolocationPosition>((resolve, reject) => {
@@ -85,7 +51,7 @@ async function reverseGeocode(latitude: number, longitude: number): Promise<{
   }
 }
 
-async function getGpsDetectedContext(ipContext: DetectedLocationContext | null) {
+async function getGpsDetectedContext() {
   const position = await getBrowserPosition()
   const reverse = await reverseGeocode(position.coords.latitude, position.coords.longitude)
   return {
@@ -95,16 +61,14 @@ async function getGpsDetectedContext(ipContext: DetectedLocationContext | null) 
       longitude: position.coords.longitude,
       accuracyMeters: position.coords.accuracy,
       detail: reverse.detail,
-      ipContext,
+      ipContext: null,
     }).context,
   }
 }
 
 export async function resolveServiceEntryHref(serviceSlug: string) {
-  const { context: ipContext, detectedLabel: ipDetectedLabel } = await getIpDetectedContext()
-
   try {
-    const gpsResult = await getGpsDetectedContext(ipContext.citySlug ? ipContext : null)
+    const gpsResult = await getGpsDetectedContext()
     const gpsContext = gpsResult.context
     if (gpsContext.citySlug) {
       return routes.cityService(gpsContext.citySlug, serviceSlug, {
@@ -122,20 +86,8 @@ export async function resolveServiceEntryHref(serviceSlug: string) {
       })
     }
   } catch {
-    // Fall back to IP-based detection or the compact resolver page.
+    // Fall back to the compact resolver page when precise location is unavailable.
   }
 
-  if (ipContext.citySlug) {
-    return routes.cityService(ipContext.citySlug, serviceSlug, {
-      localAreaSlug: ipContext.confidence === 'high' ? ipContext.localAreaSlug : null,
-      source: ipContext.source,
-        confidence: ipContext.confidence,
-      })
-  }
-
-  return routes.service(serviceSlug, {
-    source: ipContext.source !== 'none' ? ipContext.source : null,
-    confidence: ipContext.confidence !== 'unsupported' ? ipContext.confidence : null,
-    detectedLabel: ipDetectedLabel,
-  })
+  return routes.service(serviceSlug)
 }
