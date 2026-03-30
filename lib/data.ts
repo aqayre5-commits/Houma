@@ -1431,16 +1431,22 @@ export const cityServices: Record<string, CityService> = {
 
 export function shortFee(feesNote: string): string {
   if (/gratuit/i.test(feesNote)) return 'Gratuit'
-  if (/mavignette\.ma/i.test(feesNote)) return 'Payant'
+  if (/Voitures de tourisme, Essence|Gasoil|Vehicules electriques et hybrides/i.test(feesNote)) {
+    return 'Selon véhicule / carburant'
+  }
+  if (/mavignette\.ma/i.test(feesNote)) return 'Tarif variable'
   const match = feesNote.match(/(\d[\d\s]*MAD)/i)
   if (match) return match[1].trim()
-  if (/etf\.tax\.gov\.ma/i.test(feesNote)) return 'Payant'
+  if (/etf\.tax\.gov\.ma/i.test(feesNote)) return 'Tarif variable'
   return feesNote.split('.')[0].trim().slice(0, 20)
 }
 
 export function shortFeeAr(feesNoteAr: string): string {
   if (/مجاناً/.test(feesNoteAr)) return 'مجاناً'
-  if (/mavignette\.ma|etf\.tax\.gov\.ma/.test(feesNoteAr)) return 'بدفع'
+  if (/السيارات السياحية|ديزل|المركبات الكهربائية والهجينة/.test(feesNoteAr)) {
+    return 'حسب المركبة / الوقود'
+  }
+  if (/mavignette\.ma|etf\.tax\.gov\.ma/.test(feesNoteAr)) return 'تعريفة متغيرة'
   return feesNoteAr.split('.')[0].trim().slice(0, 20)
 }
 
