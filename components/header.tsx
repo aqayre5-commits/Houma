@@ -63,9 +63,6 @@ export function Header({ lang }: { lang: Lang }) {
           <Link href={routes.offices()} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900">
             {isAr ? 'المكاتب' : 'Bureaux'}
           </Link>
-          <Link href={routes.search()} className="rounded-full px-3.5 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900">
-            {isAr ? 'بحث' : 'Recherche'}
-          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -108,9 +105,6 @@ export function Header({ lang }: { lang: Lang }) {
             </Link>
             <Link href={routes.offices()} onClick={() => setOpen(false)} className="border-b border-slate-50 py-3 text-sm font-medium text-slate-700">
               {isAr ? 'المكاتب' : 'Bureaux'}
-            </Link>
-            <Link href={routes.search()} onClick={() => setOpen(false)} className="border-b border-slate-50 py-3 text-sm font-medium text-slate-700">
-              {isAr ? 'بحث' : 'Recherche'}
             </Link>
             <Link href={routes.issue()} onClick={() => setOpen(false)} className="py-3 text-sm font-medium text-slate-700">
               {isAr ? 'الإبلاغ عن خطأ' : 'Signaler une erreur'}
