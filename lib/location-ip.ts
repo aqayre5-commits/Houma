@@ -47,14 +47,16 @@ export function getDetectedLocationLabelFromHeaders(headerBag: HeaderBag): strin
 }
 
 export function getDetectedLocationContextFromHeaders(headerBag: HeaderBag): DetectedLocationContext {
+  const rawCity =
+    headerBag.get('x-vercel-ip-city') ??
+    headerBag.get('x-vercel-id-city') ??
+    headerBag.get('x-city')
   const country = headerBag.get('x-vercel-ip-country')
   const citySlug =
     country && country !== 'MA'
       ? null
       : normalizeSupportedCity(
-          headerBag.get('x-vercel-ip-city') ??
-            headerBag.get('x-vercel-id-city') ??
-            headerBag.get('x-city'),
+          rawCity,
         )
   const postalCode = normalizePostalCode(
     headerBag.get('x-vercel-ip-postal-code') ??
@@ -64,7 +66,7 @@ export function getDetectedLocationContextFromHeaders(headerBag: HeaderBag): Det
 
   if (!citySlug) {
     return {
-      source: 'none',
+      source: rawCity || postalCode ? 'ip' : 'none',
       citySlug: null,
       neighborhoodSlug: null,
       localAreaSlug: null,

@@ -48,8 +48,8 @@ test('unsupported IP city falls back to compact service resolver', async ({ brow
   })
 
   await expect(page.getByText('Nous n’avons pas encore confirmé la ville')).toBeVisible()
-  await expect(page.getByText('Localisation détectée : Marrakech')).toBeVisible()
-  await expect(page.getByText('Choisissez Casablanca, Rabat ou Tanger pour continuer.')).toBeVisible()
+  await expect(page.getByText('Repère réseau approximatif : Marrakech')).toBeVisible()
+  await expect(page.getByText(/Cette indication réseau est approximative/)).toBeVisible()
   await expect(page.getByLabel('Ville')).toHaveValue('')
   await expect(page.getByLabel('Zone sélectionnée')).toHaveCount(0)
   await expect(page.getByRole('button', { name: 'Confirmer la zone' })).toHaveCount(0)

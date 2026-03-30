@@ -8,6 +8,7 @@ import { getLang } from '@/lib/lang'
 import { getDetectedLocationContextFromHeaders, getDetectedLocationLabelFromHeaders } from '@/lib/location-ip'
 import { routes } from '@/lib/routes'
 import { buildMetadata } from '@/lib/seo'
+import type { LocationDetectionSource } from '@/types/models'
 
 export const revalidate = 86400
 
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ServicePage({ params, searchParams }: Props) {
   const { service } = await params
-  const { detectedLabel } = await searchParams
+  const { detectedLabel, source } = await searchParams
   const record = getMasterService(service)
   if (!record) notFound()
 
@@ -41,6 +42,12 @@ export default async function ServicePage({ params, searchParams }: Props) {
   const headerStore = await headers()
   const initialDetectedContext = getDetectedLocationContextFromHeaders(headerStore)
   const unsupportedDetectedLabel = detectedLabel ?? getDetectedLocationLabelFromHeaders(headerStore)
+  const searchParamSource: LocationDetectionSource | null =
+    source === 'none' || source === 'ip' || source === 'gps' || source === 'ip_gps' || source === 'manual'
+      ? source
+      : null
+  const detectedLocationSource =
+    searchParamSource ?? (unsupportedDetectedLabel ? initialDetectedContext.source : null)
 
   if (initialDetectedContext.citySlug) {
     redirect(
@@ -79,6 +86,7 @@ export default async function ServicePage({ params, searchParams }: Props) {
             lang={lang}
             initialDetectedContext={initialDetectedContext}
             detectedLocationLabel={unsupportedDetectedLabel}
+            detectedLocationSource={detectedLocationSource}
           />
         </div>
 

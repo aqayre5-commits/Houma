@@ -23,11 +23,13 @@ export function ServiceIntentResolver({
   lang = 'fr',
   initialDetectedContext = createEmptyDetectedLocationContext(),
   detectedLocationLabel = null,
+  detectedLocationSource = null,
 }: {
   service: MasterService
   lang?: Lang
   initialDetectedContext?: DetectedLocationContext
   detectedLocationLabel?: string | null
+  detectedLocationSource?: DetectedLocationContext['source'] | null
 }) {
   const router = useRouter()
   const isAr = lang === 'ar'
@@ -46,6 +48,9 @@ export function ServiceIntentResolver({
     return lang === 'ar' ? firstCandidate.displayLabelAr ?? firstCandidate.displayLabelFr : firstCandidate.displayLabelFr
   }, [lang, rankedCandidates])
   const canAutoRoute = canDirectRoute(effectiveDetectedContext)
+  const hasApproximateNetworkHint = detectedLocationSource === 'ip'
+  const hasPreciseUnsupportedLocation =
+    detectedLocationSource === 'gps' || detectedLocationSource === 'ip_gps'
 
   useEffect(() => {
     if (autoRouted.current) return
@@ -143,12 +148,26 @@ export function ServiceIntentResolver({
       {detectedLocationLabel ? (
         <div className="mt-3 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           <p className="font-semibold">
-            {isAr ? `تم رصد الموقع التالي: ${detectedLocationLabel}` : `Localisation détectée : ${detectedLocationLabel}`}
+            {hasApproximateNetworkHint
+              ? (isAr
+                ? `مؤشر تقريبي من الشبكة: ${detectedLocationLabel}`
+                : `Repère réseau approximatif : ${detectedLocationLabel}`)
+              : (isAr
+                ? `تم رصد الموقع التالي: ${detectedLocationLabel}`
+                : `Position détectée : ${detectedLocationLabel}`)}
           </p>
           <p className="mt-1">
-            {isAr
-              ? 'هذه المنطقة ليست ضمن المدن المدعومة حالياً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة.'
-              : 'Cette zone n’est pas encore couverte. Choisissez Casablanca, Rabat ou Tanger pour continuer.'}
+            {hasApproximateNetworkHint
+              ? (isAr
+                ? 'هذا مجرد مؤشر شبكي تقريبي وقد لا يكون دقيقاً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة، أو استخدم الموقع الدقيق للتحقق.'
+                : 'Cette indication réseau est approximative et peut être inexacte. Choisissez Casablanca, Rabat ou Tanger pour continuer, ou utilisez la position précise pour vérifier.')
+              : hasPreciseUnsupportedLocation
+                ? (isAr
+                  ? 'هذه المنطقة غير مدعومة حالياً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة.'
+                  : 'Cette zone n’est pas encore couverte. Choisissez Casablanca, Rabat ou Tanger pour continuer.')
+                : (isAr
+                  ? 'هذه المنطقة ليست ضمن المدن المدعومة حالياً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة.'
+                  : 'Cette zone n’est pas encore couverte. Choisissez Casablanca, Rabat ou Tanger pour continuer.')}
           </p>
         </div>
       ) : null}
