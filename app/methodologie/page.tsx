@@ -12,8 +12,8 @@ export async function generateMetadata() {
   return buildMetadata({
     title: isAr ? 'المنهجية' : 'Méthodologie',
     description: isAr
-      ? 'قواعد جمع المصادر والتحقق والتحديث التحريري في Houma.'
-      : 'Règles de sourcing, vérification et mise à jour éditoriale de Houma.',
+      ? 'كيف يجمع Houma المصادر الرسمية ويعيد تحريرها لشرح الوثائق والخطوات والسلطات المحلية المعنية.'
+      : 'Comment Houma collecte les sources officielles et les réécrit pour expliquer les documents, les étapes et les autorités locales concernées.',
     path: '/methodologie',
     lang,
   })

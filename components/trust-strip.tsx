@@ -23,8 +23,8 @@ export function TrustStrip({
           <p className="text-sm font-semibold text-slate-900">{isAr ? 'دليل غير رسمي' : 'Guide non officiel'}</p>
           <p className="text-sm text-slate-500">
             {isAr
-              ? 'الموقع مستقل وغير تابع لإدارة عمومية. المحتوى موجّه للإرشاد قبل التنقل.'
-              : "Le site est indépendant et non affilié à une administration. Le contenu guide l'orientation avant déplacement."}
+              ? 'الموقع مستقل وغير تابع لإدارة عمومية. يساعد على فهم الوثائق والخطوات والسلطة المحلية المعنية قبل التنقل.'
+              : "Le site est indépendant et non affilié à une administration. Il aide à comprendre les documents, les étapes et l'autorité locale concernée avant déplacement."}
           </p>
         </div>
       </div>
@@ -38,8 +38,8 @@ export function TrustStrip({
             {preview.length > 0
               ? preview.map((source) => source.label).join(' · ')
               : isAr
-                ? 'كل صفحة نهائية تعرض مرجعاً رسمياً وتاريخ مراجعة.'
-                : 'Chaque page finale expose au moins une source officielle et une date de revue.'}
+                ? 'كل صفحة نهائية تعرض مرجعاً رسمياً يساعد على التحقق من الوثائق أو الخطوات أو الجهة المعنية.'
+                : 'Chaque page finale expose au moins une source officielle pour vérifier les documents, les étapes ou l’autorité concernée.'}
           </p>
         </div>
       </div>

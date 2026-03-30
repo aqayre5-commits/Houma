@@ -12,8 +12,8 @@ export async function generateMetadata() {
   return buildMetadata({
     title: isAr ? 'حول Houma' : 'À propos',
     description: isAr
-      ? 'النطاق التحريري والمدن المغطاة وحدود المنتج في Houma.'
-      : 'Portée éditoriale, villes couvertes et périmètre produit de Houma.',
+      ? 'ما هو Houma وكيف يساعد على فهم الوثائق المطلوبة وخطوات الطلب والسلطات المحلية المعنية.'
+      : 'Ce que fait Houma et comment le site aide à comprendre les documents requis, les étapes de demande et les autorités locales concernées.',
     path: '/a-propos',
     lang,
   })

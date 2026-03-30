@@ -5,107 +5,107 @@ export const homePageCopy = {
 
 export const aboutPageCopy = {
   introFr:
-    "Houma est un guide privé d'orientation administrative conçu pour aider les habitants à comprendre où commencer une démarche, quelles pièces préparer et quelle source officielle vérifier avant de se déplacer.",
+    "Houma est un site d'information qui aide les usagers à comprendre comment déposer une demande auprès des autorités locales marocaines décentralisées, quelles pièces préparer, et quelle administration vérifier avant de se déplacer.",
   introAr:
-    'Houma دليل خاص للتوجيه الإداري صُمم لمساعدة السكان على فهم من أين يبدأون الإجراء وما الوثائق التي يجب إعدادها وما المصدر الرسمي الذي ينبغي التحقق منه قبل التنقل.',
+    'Houma موقع معلوماتي يساعد المستعملين على فهم كيفية إيداع الطلبات لدى السلطات المحلية اللاممركزة في المغرب، وما الوثائق التي يجب إعدادها، وأي إدارة ينبغي التحقق منها قبل التنقل.',
   sectionsFr: [
     {
-      title: 'Notre rôle',
+      title: 'Ce que fait Houma',
       body:
-        "Houma n'est ni une administration ni un intermédiaire. Le produit organise des informations dispersées afin de fournir un repère pratique: la bonne démarche, le bon niveau de réponse et la bonne source officielle.",
+        "Houma facilite la préparation des démarches administratives locales. Le site rassemble des informations utiles pour savoir quels documents sont demandés, quelles étapes suivre, et quelle autorité locale peut être compétente pour recevoir la demande.",
     },
     {
       title: 'Ce que couvre la version actuelle',
       body:
-        "La version actuelle couvre Casablanca, Rabat et Tanger, avec un premier périmètre de démarches locales et hybrides. Certaines réponses peuvent être données au niveau ville, tandis que d'autres deviennent plus précises lorsque la zone est connue.",
+        "La version actuelle couvre Casablanca, Rabat et Tanger avec un premier périmètre de services locaux, hybrides et en ligne. Certaines réponses peuvent être données au niveau de la ville, tandis que d'autres deviennent plus précises lorsque la zone de résidence est connue.",
     },
     {
-      title: 'Ce que Houma ne promet pas',
+      title: 'Comment utiliser le site',
       body:
-        "Houma ne remplace pas la confirmation d'un agent au guichet, ne garantit pas un délai réel de traitement et ne constitue jamais une preuve officielle. Les règles, frais et conditions peuvent évoluer, parfois sans préavis public détaillé.",
+        "Vous pouvez commencer par le service recherché, vérifier les documents à préparer, consulter les frais, les étapes et les sources officielles, puis utiliser la ville ou la zone comme contexte lorsque cela aide à identifier l'autorité locale responsable.",
     },
     {
-      title: 'Pourquoi ce produit existe',
+      title: 'Ce que Houma ne remplace pas',
       body:
-        "Une grande partie de la difficulté administrative ne vient pas seulement des formulaires, mais de l'incertitude avant le déplacement. Houma cherche à réduire cette incertitude avec une réponse lisible, des liens officiels et des limites clairement assumées.",
+        "Houma ne remplace ni l'administration concernée, ni la confirmation d'un agent au guichet, ni la valeur d'une preuve officielle. Les règles, les frais, les documents demandés et les conditions de traitement peuvent évoluer, et la source officielle reste toujours prioritaire.",
     },
   ],
   sectionsAr: [
     {
-      title: 'دورنا',
+      title: 'ماذا يفعل Houma',
       body:
-        'Houma ليست إدارة ولا وسيطاً. فالمنتج ينظم معلومات متفرقة ليقدم مرجعاً عملياً: الإجراء الصحيح ومستوى الجواب المناسب والمصدر الرسمي الذي يجب الرجوع إليه.',
+        'يسهّل Houma التحضير للإجراءات الإدارية المحلية. فهو يجمع المعلومات المفيدة لمعرفة الوثائق المطلوبة، والخطوات التي ينبغي اتباعها، والسلطة المحلية التي قد تكون مختصة باستقبال الطلب.',
     },
     {
       title: 'ما الذي تغطيه النسخة الحالية',
       body:
-        'تغطي النسخة الحالية الدار البيضاء والرباط وطنجة مع نطاق أولي من الإجراءات المحلية والمختلطة. بعض الأجوبة يمكن تقديمها على مستوى المدينة، بينما تصبح أجوبة أخرى أدق عندما تكون المنطقة معروفة.',
+        'تغطي النسخة الحالية الدار البيضاء والرباط وطنجة مع نطاق أولي من الخدمات المحلية والمختلطة والرقمية. بعض الأجوبة يمكن تقديمها على مستوى المدينة، بينما تصبح أجوبة أخرى أدق عندما تكون منطقة السكن معروفة.',
     },
     {
-      title: 'ما الذي لا تعد به Houma',
+      title: 'كيف يُستعمل الموقع',
       body:
-        'لا تعوض Houma تأكيد الموظف في الشباك، ولا تضمن آجال المعالجة الفعلية، ولا تشكل أبداً إثباتاً رسمياً. فقد تتغير القواعد والرسوم والشروط، وأحياناً دون إعلان عمومي مفصل.',
+        'يمكنك البدء بالخدمة التي تبحث عنها، ثم التحقق من الوثائق الواجب إعدادها، والرسوم، والخطوات، والمصادر الرسمية، وبعد ذلك استعمال المدينة أو المنطقة كسياق عندما يساعد ذلك على تحديد السلطة المحلية المسؤولة.',
     },
     {
-      title: 'لماذا يوجد هذا المنتج',
+      title: 'ما الذي لا يعوضه Houma',
       body:
-        'جزء كبير من صعوبة الإجراءات لا يأتي فقط من الاستمارات، بل من الغموض قبل التنقل. وتسعى Houma إلى تقليل هذا الغموض عبر جواب واضح وروابط رسمية وحدود معلنة بوضوح.',
+        'لا يعوض Houma الإدارة المعنية، ولا تأكيد الموظف في الشباك، ولا قيمة الإثبات الرسمي. فقد تتغير القواعد والرسوم والوثائق المطلوبة وشروط المعالجة، ولذلك يبقى المصدر الرسمي هو المرجع الأول دائماً.',
     },
   ],
 }
 
 export const methodologyPageCopy = {
   introFr:
-    "Les pages Houma sont construites à partir de sources officielles nationales, institutionnelles ou locales, puis reformulées dans un format plus clair pour l'utilisateur final.",
+    "Les pages Houma sont rédigées à partir de sources officielles marocaines puis restructurées pour aider l'usager à comprendre les documents requis, le déroulement de la demande et le niveau d'administration locale concerné.",
   introAr:
-    'تُبنى صفحات Houma انطلاقاً من مصادر رسمية وطنية أو مؤسساتية أو محلية، ثم يعاد تحريرها في صيغة أوضح للمستخدم النهائي.',
+    'تُحرَّر صفحات Houma انطلاقاً من مصادر رسمية مغربية ثم يُعاد تنظيمها لمساعدة المستعمل على فهم الوثائق المطلوبة، ومسار الطلب، ومستوى الإدارة المحلية المعنية.',
   sectionsFr: [
     {
       title: 'Collecte des sources',
       body:
-        "Chaque page part d'une ou plusieurs sources officielles: portail national, ministère, administration spécialisée, service fiscal, collectivité locale ou plateforme institutionnelle. Les liens sources restent visibles sur les pages concernées.",
+        "Chaque page part d'une ou plusieurs sources officielles: portail national, ministère, administration spécialisée, service fiscal, collectivité territoriale ou plateforme institutionnelle. Les liens vers ces sources restent visibles sur les pages concernées.",
     },
     {
-      title: 'Réécriture éditoriale',
+      title: 'Réécriture utile pour l’usager',
       body:
-        "Le contenu n'est pas copié tel quel. Il est restructuré pour répondre à des questions concrètes: où aller, quoi préparer, combien payer, quel délai prévoir et dans quels cas une zone locale change réellement la réponse.",
+        "Le contenu n'est pas reproduit tel quel. Il est réécrit pour répondre à des questions concrètes: quels documents préparer, quelles étapes suivre, où déposer la demande, combien payer, quel délai prévoir, et quand le contexte local change réellement la réponse.",
     },
     {
       title: "Gestion de l'incertitude",
       body:
-        "Lorsque Houma ne peut pas confirmer un bureau précis, le produit affiche un niveau de réponse plus prudent, par exemple au niveau ville. L'objectif est d'éviter la fausse certitude plutôt que de sur-promettre une précision fragile.",
+        "Lorsque Houma ne peut pas confirmer une autorité locale précise, le site affiche un niveau de réponse plus prudent, par exemple au niveau ville. L'objectif est d'éviter la fausse certitude et de ne pas attribuer à tort une compétence locale fragile ou non vérifiée.",
     },
     {
       title: 'Mise à jour et correction',
       body:
-        "Les données sont revues à partir des changements détectés sur les sources officielles et des retours reçus via le formulaire de correction. Si une administration applique une règle différente sur place, l'information officielle la plus récente prévaut.",
+        "Les données sont revues à partir des changements détectés sur les sources officielles et des retours reçus via le formulaire de correction. Si une administration applique une règle différente sur place, l'information officielle la plus récente prévaut sur le résumé éditorial affiché sur Houma.",
     },
   ],
   sectionsAr: [
     {
       title: 'جمع المصادر',
       body:
-        'تنطلق كل صفحة من مصدر رسمي واحد أو أكثر: بوابة وطنية أو وزارة أو إدارة متخصصة أو مصلحة ضريبية أو جماعة محلية أو منصة مؤسساتية. وتبقى روابط المصادر ظاهرة في الصفحات المعنية.',
+        'تنطلق كل صفحة من مصدر رسمي واحد أو أكثر: بوابة وطنية أو وزارة أو إدارة متخصصة أو مصلحة ضريبية أو جماعة ترابية أو منصة مؤسساتية. وتبقى روابط هذه المصادر ظاهرة في الصفحات المعنية.',
     },
     {
-      title: 'إعادة التحرير',
+      title: 'إعادة تحرير مفيدة للمستعمل',
       body:
-        'لا يُنسخ المحتوى كما هو. بل يُعاد تنظيمه ليجيب عن أسئلة عملية: إلى أين أتوجه، ماذا أعد، كم سأدفع، ما الأجل المتوقع، ومتى تغير المنطقة المحلية الجواب فعلاً.',
+        'لا يُنقل المحتوى كما هو، بل يُعاد تحريره ليجيب عن أسئلة عملية: ما الوثائق التي يجب إعدادها، ما الخطوات التي ينبغي اتباعها، أين يودع الطلب، كم سأدفع، ما الأجل المتوقع، ومتى يغيّر السياق المحلي الجواب فعلاً.',
     },
     {
       title: 'تدبير عدم اليقين',
       body:
-        'عندما لا تستطيع Houma تأكيد مكتب محدد، يعرض المنتج مستوى جواب أكثر حذراً، مثلا على مستوى المدينة. فالهدف هو تجنب اليقين الزائف بدل المبالغة في دقة هشة.',
+        'عندما لا تستطيع Houma تأكيد سلطة محلية محددة، يعرض الموقع مستوى جواب أكثر حذراً، مثلاً على مستوى المدينة. فالهدف هو تجنب اليقين الزائف وعدم نسبة اختصاص محلي على نحو غير متحقق أو هش.',
     },
     {
       title: 'التحديث والتصحيح',
       body:
-        'تُراجع المعطيات انطلاقاً من التغييرات المرصودة في المصادر الرسمية ومن الملاحظات الواردة عبر نموذج التصحيح. وإذا طبقت إدارة قاعدة مختلفة في الواقع، فإن أحدث معلومة رسمية هي التي تُعتمد.',
+        'تُراجع المعطيات انطلاقاً من التغييرات المرصودة في المصادر الرسمية ومن الملاحظات الواردة عبر نموذج التصحيح. وإذا طبقت إدارة قاعدة مختلفة في الواقع، فإن أحدث معلومة رسمية هي التي تُعتمد على الملخص التحريري المعروض في Houma.',
     },
   ],
 }
 
 export const sourcePageCopy = {
-  introFr: 'Toutes les listes de documents, frais et liens externes sont rattachés à une source officielle.',
-  introAr: 'كل لوائح الوثائق والرسوم والروابط الخارجية مرتبطة بمصدر رسمي.',
+  introFr: 'Les listes de documents, les frais, les étapes et les liens externes affichés sur Houma sont rattachés à une source officielle dès qu’elle est disponible.',
+  introAr: 'ترتبط لوائح الوثائق والرسوم والخطوات والروابط الخارجية المعروضة في Houma بمصدر رسمي كلما كان ذلك متاحاً.',
 }

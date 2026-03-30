@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: 'Houma',
     template: '%s',
   },
-  description: 'Guide local des démarches administratives à Casablanca, Rabat et Tanger.',
+  description: 'Site d’information pour comprendre les documents requis, les étapes de demande et les autorités locales compétentes au Maroc.',
   applicationName: 'Houma',
   openGraph: {
     siteName: 'Houma',

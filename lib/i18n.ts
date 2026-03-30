@@ -12,7 +12,7 @@ const translations = {
     heroTag: 'Casablanca · Rabat · Tanger · 17 démarches vérifiées',
     heroTitle1: 'Préparez vos démarches',
     heroTitle2: 'avant de vous déplacer.',
-    heroSubtitle: 'Bureau compétent, pièces à apporter, frais et délai — pour Casablanca, Rabat et Tanger.',
+    heroSubtitle: 'Trouvez les documents à préparer, les étapes de la demande et l’autorité locale compétente pour vos services à Casablanca, Rabat et Tanger.',
     chooseCity: 'Choisissez votre ville',
     or: 'ou',
     chooseService: 'Choisissez une démarche',
@@ -51,7 +51,7 @@ const translations = {
     step3: 'Consultez l\'adresse et les horaires du bureau compétent.',
     allDemarches: 'Toutes les démarches',
     // Footer
-    footerTagline: "Guide privé et non officiel d'orientation administrative pour Casablanca, Rabat et Tanger. Ce site ne remplace pas les administrations concernées.",
+    footerTagline: "Site d'information qui aide à préparer les documents et les étapes de demande auprès des autorités locales marocaines décentralisées. Houma ne remplace pas les administrations concernées.",
     footerExplore: 'Explorer',
     footerGuides: 'Guides',
     footerCities: 'Villes',
@@ -64,7 +64,7 @@ const translations = {
     footerAbout: 'À propos',
     footerMethodology: 'Méthodologie',
     footerSources: 'Sources',
-    footerNote: 'Houma — Guide privé · Non officiel · 3 villes · 17 démarches',
+    footerNote: 'Houma — Documents, étapes et autorités locales · 3 villes · 17 démarches',
     // Breadcrumb
     breadVilles: 'Villes',
     breadDemarches: 'Démarches',
@@ -81,7 +81,7 @@ const translations = {
     heroTag: 'الدار البيضاء · الرباط · طنجة · 17 إجراءً موثقاً',
     heroTitle1: 'أعدّ إجراءاتك',
     heroTitle2: 'قبل التنقل.',
-    heroSubtitle: 'المكتب المختص، الوثائق الواجب إحضارها، الرسوم والآجال — للدار البيضاء والرباط وطنجة.',
+    heroSubtitle: 'اعثر على الوثائق الواجب إعدادها وخطوات الطلب والسلطة المحلية المختصة بخدمتك في الدار البيضاء والرباط وطنجة.',
     chooseCity: 'اختر مدينتك',
     or: 'أو',
     chooseService: 'اختر إجراءك',
@@ -120,7 +120,7 @@ const translations = {
     step3: 'راجع عنوان المكتب المختص وأوقات عمله.',
     allDemarches: 'جميع الإجراءات',
     // Footer
-    footerTagline: 'دليل خاص وغير رسمي للتوجيه الإداري في الدار البيضاء والرباط وطنجة. هذا الموقع لا يُغني عن مراجعة الإدارات المعنية.',
+    footerTagline: 'موقع معلوماتي يساعد على إعداد الوثائق وفهم خطوات الطلب لدى السلطات المحلية المغربية اللاممركزة. ولا يعوض Houma الإدارات المعنية.',
     footerExplore: 'استكشاف',
     footerGuides: 'الأدلة',
     footerCities: 'المدن',
@@ -133,7 +133,7 @@ const translations = {
     footerAbout: 'حول Houma',
     footerMethodology: 'المنهجية',
     footerSources: 'المصادر',
-    footerNote: 'Houma — دليل خاص · غير رسمي · 3 مدن · 17 إجراءاً',
+    footerNote: 'Houma — الوثائق والخطوات والسلطات المحلية · 3 مدن · 17 إجراءاً',
     // Breadcrumb
     breadVilles: 'المدن',
     breadDemarches: 'الإجراءات',

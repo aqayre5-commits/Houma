@@ -12,10 +12,10 @@ export async function generateMetadata() {
   const isAr = lang === 'ar'
 
   return buildMetadata({
-    title: isAr ? 'Houma: الدليل المحلي للإجراءات في الدار البيضاء والرباط وطنجة' : 'Houma — démarches locales à Casablanca, Rabat et Tanger',
+    title: isAr ? 'Houma: الوثائق والخطوات والسلطات المحلية للخدمات في الدار البيضاء والرباط وطنجة' : 'Houma — documents, étapes et autorités locales à Casablanca, Rabat et Tanger',
     description: isAr
-      ? 'اعثر على المدينة المناسبة والإجراء المناسب والوثائق والرسوم والمصادر الرسمية.'
-      : 'Trouvez la bonne ville, la bonne démarche, les pièces, les frais et les sources officielles.',
+      ? 'اعثر على الوثائق المطلوبة وخطوات الطلب والرسوم والسلطة المحلية المعنية والمصادر الرسمية.'
+      : 'Trouvez les documents requis, les étapes de la demande, les frais, l’autorité locale concernée et les sources officielles.',
     path: '/',
     lang,
   })

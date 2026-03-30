@@ -12,8 +12,8 @@ export async function generateMetadata() {
   return buildMetadata({
     title: isAr ? 'كيف يعمل Houma' : 'Comment ça marche',
     description: isAr
-      ? 'كيف تستعمل Houma لاختيار الخدمة ثم فهم الجهة المسؤولة والمصادر الرسمية.'
-      : 'Comment utiliser Houma pour choisir une démarche, comprendre l’autorité responsable et vérifier les sources officielles.',
+      ? 'كيف يساعد Houma على فهم الوثائق المطلوبة وخطوات الطلب والسلطة المحلية المعنية والمصادر الرسمية.'
+      : 'Comment Houma aide à comprendre les documents requis, les étapes de la demande, l’autorité locale concernée et les sources officielles.',
     path: routes.howItWorks(),
     lang,
   })
@@ -25,16 +25,16 @@ export default async function HowItWorksPage() {
 
   const steps = isAr
     ? [
-        'اختر الخدمة أولاً من الصفحة الرئيسية أو من صفحة الإجراءات.',
-        'تستعمل Houma المدينة والمنطقة كسياق عندما يفيد ذلك.',
-        'تعرض صفحة الخدمة الجهة المسؤولة كجواب نهائي.',
-        'تحقق دائما من المصدر الرسمي قبل التنقل.',
+        'ابدأ بالخدمة التي تريد إنجازها من الصفحة الرئيسية أو من صفحة الإجراءات.',
+        'استعمل الموقع أو اختر المدينة يدوياً عندما يساعد ذلك على تحديد السلطة المحلية المختصة.',
+        'راجع الوثائق المطلوبة والرسوم والخطوات المعروضة في صفحة الخدمة.',
+        'تحقق من المصدر الرسمي قبل إيداع الطلب أو التنقل إلى الإدارة.',
       ]
     : [
-        'Choisissez d’abord la démarche depuis la page d’accueil ou la page des démarches.',
-        'Houma utilise la ville et la zone comme contexte quand cela améliore la réponse.',
-        'La page de service affiche l’autorité responsable comme réponse finale.',
-        'Vérifiez toujours la source officielle avant de vous déplacer.',
+        'Commencez par le service que vous voulez effectuer depuis la page d’accueil ou la page des démarches.',
+        'Utilisez la localisation ou choisissez la ville manuellement lorsque cela aide à identifier l’autorité locale compétente.',
+        'Consultez les documents requis, les frais et les étapes affichés sur la page du service.',
+        'Vérifiez toujours la source officielle avant de déposer la demande ou de vous déplacer.',
       ]
 
   return (
@@ -44,8 +44,8 @@ export default async function HowItWorksPage() {
         <h1 className="text-4xl font-semibold">{isAr ? 'كيف يعمل Houma' : 'Comment ça marche'}</h1>
         <p className="mt-4 text-lg text-slate-600">
           {isAr
-            ? 'Houma دليل خاص يساعدك على فهم المسطرة والوثائق والجهة المسؤولة، لكنه لا يعوض الإدارة أو المصدر الرسمي.'
-            : 'Houma est un guide privé qui vous aide à comprendre la démarche, les pièces et l’autorité responsable, sans remplacer l’administration ni la source officielle.'}
+            ? 'Houma موقع معلوماتي يساعدك على فهم الوثائق المطلوبة، وخطوات الطلب، والسلطة المحلية اللاممركزة التي ينبغي التوجه إليها، دون أن يعوض الإدارة أو المصدر الرسمي.'
+            : 'Houma est un site d’information qui vous aide à comprendre les documents requis, le processus de demande et l’autorité locale décentralisée à laquelle vous adresser, sans remplacer l’administration ni la source officielle.'}
         </p>
         <div className="mt-8 card p-6">
           <ol className="list-decimal space-y-3 pl-5 text-slate-700">
