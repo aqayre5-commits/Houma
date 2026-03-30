@@ -67,8 +67,8 @@ test('unsupported precise GPS location is shown when outside supported cities', 
   await page.goto('http://127.0.0.1:3000/')
   await page.getByRole('link', { name: /Attestation de résidence/ }).first().click()
   await expect(page).toHaveURL(/\/demarches\/attestation-residence\?source=gps&confidence=unsupported/)
-  await expect(page.getByText('Position détectée : Guéliz, Marrakech')).toBeVisible()
-  await expect(page.getByText('Cette zone n’est pas encore couverte.')).toBeVisible()
+  await expect(page.getByText('Detected location: Guéliz, Marrakech')).toBeVisible()
+  await expect(page.getByText('Detected location "Guéliz, Marrakech" is unfortunately not covered at the moment. Please choose another city.')).toBeVisible()
   await context.close()
 })
 

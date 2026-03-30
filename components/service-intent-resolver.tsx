@@ -162,30 +162,32 @@ export function ServiceIntentResolver({
             {hasApproximateNetworkHint
               ? (isAr
                 ? `مؤشر تقريبي من الشبكة: ${detectedLocationLabel}`
-                : `Repère réseau approximatif : ${detectedLocationLabel}`)
+                : `Approximate network hint: ${detectedLocationLabel}`)
               : (isAr
                 ? `تم رصد الموقع التالي: ${detectedLocationLabel}`
-                : `Position détectée : ${detectedLocationLabel}`)}
+                : `Detected location: ${detectedLocationLabel}`)}
           </p>
           <p className="mt-1">
             {hasApproximateNetworkHint
               ? (isAr
                 ? 'هذا مجرد مؤشر شبكي تقريبي وقد لا يكون دقيقاً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة، أو استخدم الموقع الدقيق للتحقق.'
-                : 'Cette indication réseau est approximative et peut être inexacte. Choisissez Casablanca, Rabat ou Tanger pour continuer, ou utilisez la position précise pour vérifier.')
+                : 'This network hint is approximate and may be inaccurate. Choose Casablanca, Rabat, or Tanger to continue, or use your precise location to verify it.')
               : hasPreciseUnsupportedLocation
                 ? (isAr
                   ? 'هذه المنطقة غير مدعومة حالياً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة.'
-                  : 'Cette zone n’est pas encore couverte. Choisissez Casablanca, Rabat ou Tanger pour continuer.')
+                  : `Detected location "${detectedLocationLabel}" is unfortunately not covered at the moment. Please choose another city.`)
                 : (isAr
                   ? 'هذه المنطقة ليست ضمن المدن المدعومة حالياً. اختر الدار البيضاء أو الرباط أو طنجة للمتابعة.'
-                  : 'Cette zone n’est pas encore couverte. Choisissez Casablanca, Rabat ou Tanger pour continuer.')}
+                  : `Detected location "${detectedLocationLabel}" is unfortunately not covered at the moment. Please choose another city.`)}
           </p>
         </div>
       ) : null}
 
       {gpsState.status === 'error' ? (
         <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          {isAr ? 'تعذر استخدام الموقع الدقيق. يمكنك المتابعة يدوياً.' : 'La position précise n’a pas pu être utilisée. Vous pouvez continuer manuellement.'}
+          {isAr
+            ? 'لم نتمكن من تحديد موقعك الدقيق. يمكنك المتابعة يدوياً أو المحاولة مرة أخرى.'
+            : 'We could not detect your precise location. You can continue manually or try again.'}
         </p>
       ) : null}
 
