@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { Lang } from '@/lib/lang'
 
-const FALLBACK_SITE_URL = 'https://qriba.ma'
+const FALLBACK_SITE_URL = 'https://your-domain.tld'
 
 export function getSiteUrl() {
   const raw = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || FALLBACK_SITE_URL

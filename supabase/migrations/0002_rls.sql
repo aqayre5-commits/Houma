@@ -1,4 +1,4 @@
--- Row Level Security policies for Qriba v1
+-- Row Level Security policies for Houma v1
 -- Apply after 0001_initial.sql
 
 -- Enable RLS on all tables

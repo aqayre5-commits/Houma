@@ -3,7 +3,7 @@
 ## Product Definition
 | Field | Definition |
 |---|---|
-| Product name | Qriba.ma |
+| Product name | Houma |
 | Core promise | Find the right local office and required preparation in fewer than 4 clicks |
 | Audience | Morocco residents in Casablanca, Rabat, Tanger; families; first-time applicants; time-constrained users |
 | Primary problem | Users know the service they need but not the correct neighborhood office, exact prep list, or whether an online step exists before the visit |

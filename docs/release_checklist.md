@@ -3,6 +3,7 @@
 ## Launch Checklist
 | Area | Check | Status |
 |---|---|---|
+| Legal | publication completion checklist reviewed and completed | Pending |
 | Scope | 3 cities only | Pending |
 | Scope | 5 services only | Pending |
 | Trust | disclaimer visible site-wide | Pending |
@@ -33,3 +34,8 @@
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon key |
 | `NEXT_PUBLIC_ENABLE_ADS` | `true` or `false` |
 | `NEXT_PUBLIC_ENABLE_SPONSORS` | `true` or `false` |
+
+## Related Docs
+
+- [`publication_completion_checklist.md`](/Users/abdilahiqayre/project/docs/publication_completion_checklist.md)
+- [`/legal_pages_implementation_report.md`](/Users/abdilahiqayre/project/legal_pages_implementation_report.md)

@@ -39,12 +39,12 @@
 ## Metadata Template Logic
 | Template | Title Logic | Description Logic | OG Logic |
 |---|---|---|---|
-| homepage | `Qriba.ma — Démarches locales à Casablanca, Rabat et Tanger` | city/service discovery promise | default OG |
-| city | `{City} — démarches locales et bureaux utiles | Qriba` | city-specific office and service summary | city OG |
-| service | `{Service} au Maroc — étapes et choix de ville | Qriba` | generic flow + city selector | service OG default |
-| city-service | `{Service} à {City} — où aller et quoi préparer | Qriba` | local office + prep list summary | city-service OG |
-| office | `{Office Name} — services couverts à {City} | Qriba` | address + supported services | office OG default |
-| guide | `{Guide Title} | Qriba` | guide summary + transactional next step | guide OG default |
+| homepage | `Houma — Démarches locales à Casablanca, Rabat et Tanger` | city/service discovery promise | default OG |
+| city | `{City} — démarches locales et bureaux utiles | Houma` | city-specific office and service summary | city OG |
+| service | `{Service} au Maroc — étapes et choix de ville | Houma` | generic flow + city selector | service OG default |
+| city-service | `{Service} à {City} — où aller et quoi préparer | Houma` | local office + prep list summary | city-service OG |
+| office | `{Office Name} — services couverts à {City} | Houma` | address + supported services | office OG default |
+| guide | `{Guide Title} | Houma` | guide summary + transactional next step | guide OG default |
 
 ## Schema Opportunities
 | Page Type | Schema |

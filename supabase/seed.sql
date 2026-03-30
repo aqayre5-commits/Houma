@@ -1,4 +1,4 @@
--- Qriba v1 seed data
+-- Houma v1 seed data
 -- Run after 0001_initial.sql migration
 
 -- ─── Cities ──────────────────────────────────────────────────────────────────

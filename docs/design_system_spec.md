@@ -3,7 +3,7 @@
 ## Brand System
 | Token Group | Definition |
 |---|---|
-| Brand name | Qriba |
+| Brand name | Houma |
 | Tone | direct, calm, procedural, non-bureaucratic |
 | Design goal | remove friction, surface decisions, keep trust visible |
 | Visual principle | cards over dense paragraphs; source and action blocks always visible |

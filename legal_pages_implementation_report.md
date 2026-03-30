@@ -125,3 +125,7 @@ Exact result:
 
 - Legal publication is not complete until the operator replaces the placeholder identity, address, hosting, contact, and CNDP fields with verified facts.
 - If legal review determines that current analytics tooling requires consent before activation, the site still needs a dedicated consent/control UX before final launch.
+
+## Related operator handoff
+
+- Publication-completion checklist: [`/docs/publication_completion_checklist.md`](/Users/abdilahiqayre/project/docs/publication_completion_checklist.md)

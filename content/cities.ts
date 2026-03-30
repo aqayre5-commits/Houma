@@ -12,8 +12,8 @@ export const cities: Record<string, ContentCity> = {
     introAr: legacyCities.casablanca.heroAr,
     mapCenter: { lat: 33.5731, lng: -7.5898 },
     seo: {
-      titleFr: 'Démarches administratives à Casablanca | Qriba',
-      titleAr: 'الإجراءات الإدارية في الدار البيضاء | Qriba',
+      titleFr: 'Démarches administratives à Casablanca | Houma',
+      titleAr: 'الإجراءات الإدارية في الدار البيضاء | Houma',
       descriptionFr: legacyCities.casablanca.hero,
       descriptionAr: legacyCities.casablanca.heroAr,
     },
@@ -28,8 +28,8 @@ export const cities: Record<string, ContentCity> = {
     introAr: legacyCities.rabat.heroAr,
     mapCenter: { lat: 34.0209, lng: -6.8416 },
     seo: {
-      titleFr: 'Démarches administratives à Rabat | Qriba',
-      titleAr: 'الإجراءات الإدارية في الرباط | Qriba',
+      titleFr: 'Démarches administratives à Rabat | Houma',
+      titleAr: 'الإجراءات الإدارية في الرباط | Houma',
       descriptionFr: legacyCities.rabat.hero,
       descriptionAr: legacyCities.rabat.heroAr,
     },
@@ -44,8 +44,8 @@ export const cities: Record<string, ContentCity> = {
     introAr: legacyCities.tanger.heroAr,
     mapCenter: { lat: 35.7595, lng: -5.834 },
     seo: {
-      titleFr: 'Démarches administratives à Tanger | Qriba',
-      titleAr: 'الإجراءات الإدارية في طنجة | Qriba',
+      titleFr: 'Démarches administratives à Tanger | Houma',
+      titleAr: 'الإجراءات الإدارية في طنجة | Houma',
       descriptionFr: legacyCities.tanger.hero,
       descriptionAr: legacyCities.tanger.heroAr,
     },

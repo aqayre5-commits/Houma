@@ -29,7 +29,7 @@ Audit scope: legal/disclaimer surfaces, privacy/storage, footer/legal links, ser
 - Blocker: Yes
 - File path: `/Users/abdilahiqayre/project/components/where-to-go-card.tsx`
 - Route: `/villes/[city]/demarches/[service]`
-- Issue: The final answer block did not clearly explain Qriba/Houma's role as a guidance layer rather than the filing authority.
+- Issue: The final answer block did not clearly explain Houma's role as a guidance layer rather than the filing authority.
 - Risk: Users could over-trust the displayed authority or assume the site itself is the official submission portal.
 - Fix direction: Add short guidance-role wording and a verification reminder next to the official source surface.
 

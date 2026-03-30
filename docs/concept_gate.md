@@ -25,7 +25,7 @@
 ## Frozen Product Concept
 | Field | Definition |
 |---|---|
-| Product name | Qriba.ma |
+| Product name | Houma |
 | Product type | Local administrative guidance website for Morocco |
 | Geography | Casablanca, Rabat, Tanger only in v1 |
 | User promise | Reach the correct local office and required documents in fewer than 4 clicks |

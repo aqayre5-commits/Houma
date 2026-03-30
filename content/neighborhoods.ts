@@ -32,8 +32,8 @@ export const neighborhoods: Record<string, Neighborhood> = Object.fromEntries(
         indexable: true,
         aliases: canonicalLabel.aliases,
         seo: {
-          titleFr: `${canonicalLabel.displayName} à ${city?.nameFr ?? localArea.cityNameFr} | Qriba`,
-          titleAr: `${localizedNameAr} في ${city?.nameAr ?? localArea.cityNameAr ?? localArea.cityNameFr} | Qriba`,
+          titleFr: `${canonicalLabel.displayName} à ${city?.nameFr ?? localArea.cityNameFr} | Houma`,
+          titleAr: `${localizedNameAr} في ${city?.nameAr ?? localArea.cityNameAr ?? localArea.cityNameFr} | Houma`,
           descriptionFr: `Repère administratif local à ${city?.nameFr ?? localArea.cityNameFr}: ${canonicalLabel.displayName}.`,
           descriptionAr: `مرجع إداري محلي في ${city?.nameAr ?? localArea.cityNameAr ?? localArea.cityNameFr}: ${localizedNameAr}.`,
         },
