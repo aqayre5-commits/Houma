@@ -11,44 +11,64 @@ export function Logo({
 }) {
   const isAr = lang === 'ar'
   const label = 'Houma'
-  const markSize = compact ? 'h-8 w-8' : 'h-10 w-10'
+  const markSize = compact ? 32 : 40
+  const iconSize = compact ? 32 : 40
 
   return (
     <span className="inline-flex items-center gap-2.5">
-      <span className={`inline-flex items-center justify-center rounded-full bg-teal-700 text-white ${markSize}`}>
+      <span
+        className="inline-flex items-center justify-center"
+        style={{ width: `${markSize}px`, height: `${markSize}px` }}
+      >
         <svg
-          width={compact ? '18' : '20'}
-          height={compact ? '18' : '20'}
-          viewBox="0 0 24 24"
+          width={iconSize}
+          height={iconSize}
+          viewBox="0 0 40 40"
           fill="none"
           aria-hidden="true"
         >
+          <rect x="1.5" y="1.5" width="37" height="37" rx="12" fill="#1F6B4F" stroke="#D9C8A9" strokeWidth="1.5" />
           <path
-            d="M4 11.4L12 5l8 6.4"
-            stroke="currentColor"
-            strokeWidth="2"
+            d="M10 17.5L20 10L30 17.5"
+            stroke="#FFF8E8"
+            strokeWidth="2.6"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
-            d="M6.5 10.9V19h11v-8.1"
-            stroke="currentColor"
-            strokeWidth="2"
+            d="M12.5 17V29H27.5V17"
+            stroke="#FFF8E8"
+            strokeWidth="2.6"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
-            d="M10.2 19v-4.8h3.6V19"
-            stroke="currentColor"
-            strokeWidth="2"
+            d="M20 20.5C18.067 20.5 16.5 22.067 16.5 24V29H23.5V24C23.5 22.067 21.933 20.5 20 20.5Z"
+            fill="#C89B3C"
+          />
+          <path
+            d="M20 29V33.5"
+            stroke="#C89B3C"
+            strokeWidth="2.6"
             strokeLinecap="round"
-            strokeLinejoin="round"
+          />
+          <path
+            d="M14.75 22.5H14.8"
+            stroke="#FFF8E8"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M25.2 22.5H25.25"
+            stroke="#FFF8E8"
+            strokeWidth="2.6"
+            strokeLinecap="round"
           />
         </svg>
       </span>
 
       {showWordmark ? (
-        <span className={`font-semibold text-slate-900 ${isAr ? 'font-arabic' : ''}`}>
+        <span className={`font-semibold tracking-tight text-slate-900 ${isAr ? 'font-arabic' : ''}`}>
           {label}
         </span>
       ) : null}
