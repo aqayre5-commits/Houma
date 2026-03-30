@@ -56,11 +56,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ ok: false, reason: 'invalid_params' }, { status: 400 })
   }
 
-  // Rough bounding box for Morocco — reject clearly out-of-range coords
-  if (latNum < 20 || latNum > 36 || lonNum < -18 || lonNum > 0) {
-    return NextResponse.json({ ok: false, reason: 'outside_morocco' })
-  }
-
   try {
     const url =
       `https://nominatim.openstreetmap.org/reverse` +
