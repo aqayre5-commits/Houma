@@ -1,15 +1,17 @@
 export const legalPlaceholders = {
-  publisherName: 'TODO: Replace with legal publisher/operator name',
-  publicationDirector: 'TODO: Replace with responsible publication name',
-  registeredAddress: 'TODO: Replace with registered address',
-  contactEmail: 'TODO: Replace with legal/privacy contact email',
-  privacyRightsContact: 'TODO: Replace with privacy rights contact method',
-  hostingProvider: 'TODO: Confirm hosting provider',
-  hostingAddress: 'TODO: Confirm hosting address',
-  hostingContact: 'TODO: Confirm hosting support URL or email',
-  cndpReference: 'TODO: Insert CNDP filing/receipt reference if applicable',
-  dataTransferPosture: 'TODO: Confirm hosting/data transfer posture',
-  supplementaryProcessors: 'TODO: Confirm any additional processors or subprocessors not visible in the codebase',
+  publisherName: '[À compléter : nom légal de l’éditeur / exploitant]',
+  publicationDirector: '[À compléter]',
+  registeredAddress: '[À compléter]',
+  contactEmail: '[À compléter : email de contact]',
+  privacyRightsContact: '[À compléter : modalité de contact pour vos droits]',
+  hostingProvider: '[À compléter : hébergeur]',
+  hostingAddress: '[À compléter]',
+  hostingContact: '[À compléter]',
+  cndpReference: '[À compléter : position CNDP applicable le cas échéant]',
+  dataTransferPosture: '[À compléter : lieu d’hébergement et transferts éventuels]',
+  supplementaryProcessors: '[À compléter : autres destinataires ou sous-traitants, si applicables]',
+  retentionSchedule: '[À compléter : durées de conservation par catégorie de données]',
+  productionCookieAudit: '[À compléter : confirmer les cookies et stockages réellement utilisés en production]',
 } as const
 
 export const legalStorageInventory = {
@@ -65,19 +67,43 @@ export const legalStorageInventory = {
     purposeAr:
       'يُطلب الموقع الجغرافي الدقيق بعد إجراء صريح من المستخدم لتحسين تحديد المدينة أو السياق المحلي الخاص بالخدمة.',
     transientHandlingFr:
-      "Les coordonnées brutes sont utilisées de manière transitoire pour interroger l'endpoint interne de reverse geocoding, puis transformer la réponse en contexte de ville/zone. Elles ne sont pas stockées dans un cookie, localStorage ou sessionStorage par le flux live actuel.",
+      "Les coordonnées brutes sont utilisées de manière transitoire pour obtenir un contexte de ville ou de zone, sans être conservées comme coordonnées brutes dans des cookies, localStorage ou sessionStorage par le flux live actuel.",
     transientHandlingAr:
       'تُستخدم الإحداثيات الخام بشكل عابر لاستدعاء نقطة reverse geocoding الداخلية ثم تحويل النتيجة إلى سياق مدينة أو منطقة. ولا تُخزن هذه الإحداثيات في ملف ارتباط أو localStorage أو sessionStorage في التدفق الحي الحالي.',
   },
 } as const
 
 export const siteLegalDisclaimers = {
-  homeFr: 'Houma est un guide privé, non officiel, des démarches administratives au Maroc.',
-  homeAr: 'Houma دليل خاص وغير رسمي للمساطر والإجراءات الإدارية في المغرب.',
-  footerShortFr: 'Guide privé, non officiel.',
-  footerShortAr: 'دليل خاص وغير رسمي.',
-  serviceFr: "Houma explique la procédure à partir de sources publiques et officielles, sans remplacer l'administration concernée.",
-  serviceAr: 'تشرح Houma الإجراء انطلاقاً من مصادر عمومية ورسمية، دون أن تعوض الإدارة المعنية.',
-  verifyFr: "Vérifiez toujours l'administration concernée avant de vous déplacer ou de payer.",
-  verifyAr: 'تحقق دائماً من الإدارة المعنية قبل التنقل أو الأداء.',
+  siteWideFr: [
+    'Houma est un guide privé, non officiel, des démarches administratives au Maroc.',
+    'Nous vous aidons à comprendre la procédure, les documents à préparer, les frais indicatifs, les délais et l’autorité locale la plus probable à contacter.',
+    'Houma ne remplace pas l’administration et ne dépose pas la demande à votre place.',
+    'Vérifiez toujours la source officielle avant de vous déplacer ou de payer.',
+  ],
+  siteWideAr: [
+    'Houma دليل خاص وغير رسمي للمساطر والإجراءات الإدارية في المغرب.',
+    'يساعدك Houma على فهم المسطرة والوثائق الواجب تحضيرها والرسوم التقريبية والآجال والسلطة المحلية الأرجح التي ينبغي التواصل معها.',
+    'لا يعوض Houma الإدارة ولا يودع الطلب نيابة عنك.',
+    'تحقق دائماً من المصدر الرسمي قبل التنقل أو الأداء.',
+  ],
+  footerFr: 'Guide privé, non officiel. Informations préparatoires à partir de sources publiques et officielles.',
+  footerAr: 'دليل خاص وغير رسمي. معلومات تحضيرية مبنية على مصادر عمومية ورسمية.',
+  serviceFr: [
+    'Houma vous donne une orientation pratique à partir de sources publiques et officielles.',
+    'L’autorité affichée est une autorité locale probable ou responsable selon les informations disponibles.',
+    'Vérifiez toujours la source officielle avant déplacement ou paiement.',
+  ],
+  serviceAr: [
+    'يمنحك Houma توجيهاً عملياً انطلاقاً من مصادر عمومية ورسمية.',
+    'الجهة المعروضة هي جهة محلية محتملة أو مسؤولة بحسب المعلومات المتاحة.',
+    'تحقق دائماً من المصدر الرسمي قبل التنقل أو الأداء.',
+  ],
+  legalNoticeFr: [
+    'Houma est un guide privé, non officiel, consacré à l’information pratique sur les démarches administratives au Maroc.',
+    'Le site ne constitue pas un portail gouvernemental officiel et ne réalise pas les formalités au nom de l’utilisateur.',
+  ],
+  legalNoticeAr: [
+    'Houma دليل خاص وغير رسمي مخصص للمعلومة العملية حول الإجراءات الإدارية في المغرب.',
+    'لا يشكل الموقع بوابة حكومية رسمية ولا ينجز الإجراءات باسم المستخدم.',
+  ],
 } as const

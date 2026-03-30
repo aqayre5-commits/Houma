@@ -1,5 +1,5 @@
 import { PageViewTracker } from '@/components/page-view-tracker'
-import { legalPlaceholders, legalStorageInventory } from '@/content/legal-copy'
+import { legalPlaceholders, legalStorageInventory, siteLegalDisclaimers } from '@/content/legal-copy'
 import { getLang } from '@/lib/lang'
 import { routes } from '@/lib/routes'
 import { buildMetadata } from '@/lib/seo'
@@ -13,8 +13,8 @@ export async function generateMetadata() {
   return buildMetadata({
     title: isAr ? 'سياسة ملفات الارتباط' : 'Politique cookies',
     description: isAr
-      ? 'شرح ملفات الارتباط والتخزين المحلي وقياس الاستخدام الظاهر في الكود الحالي للموقع.'
-      : 'Explication des cookies, du stockage local et des mesures d’audience visibles dans le code actuel du site.',
+      ? 'ملخص لملفات الارتباط والتخزين وأدوات القياس التي قد يستخدمها Houma، مع إبقاء النقاط غير المؤكدة بين معقوفين.'
+      : 'Résumé des cookies, stockages et outils de mesure susceptibles d’être utilisés par Houma, avec mention explicite des points restant à confirmer.',
     path: routes.cookies(),
     lang,
   })
@@ -32,6 +32,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default async function CookiesPage() {
   const lang = await getLang()
   const isAr = lang === 'ar'
+  const legalNoticeLines = isAr ? siteLegalDisclaimers.legalNoticeAr : siteLegalDisclaimers.legalNoticeFr
 
   return (
     <div className="container-shell mobile-safe-spacing py-8 md:py-12">
@@ -42,73 +43,76 @@ export default async function CookiesPage() {
         <h1 className="mt-1.5 text-3xl font-bold text-slate-900 md:text-4xl">{isAr ? 'سياسة ملفات الارتباط' : 'Politique cookies'}</h1>
         <p className="mt-3 text-slate-600">
           {isAr
-            ? 'تصف هذه الصفحة ملفات الارتباط والتخزين المحلي والقياس البرمجي الظاهر حالياً في الكود، دون ادعاء مطابقة قانونية نهائية.'
-            : 'Cette page décrit les cookies, stockages locaux et mesures techniques actuellement visibles dans le code, sans revendiquer une conformité légale définitive.'}
+            ? 'تلخص هذه الصفحة التخزينات والأدوات التقنية التي قد تكون مستعملة حالياً، مع الإشارة الصريحة إلى ما يلزم تأكيده في الإنتاج.'
+            : 'Cette page résume les stockages et outils techniques susceptibles d’être utilisés actuellement, avec indication explicite de ce qui doit encore être confirmé en production.'}
         </p>
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
+          {legalNoticeLines.map((line, index) => (
+            <p key={line} className={index === 0 ? 'font-semibold' : 'mt-1'}>
+              {line}
+            </p>
+          ))}
+        </div>
       </div>
 
       <div className="mt-8 space-y-4">
-        <Section title={isAr ? 'الفئة الضرورية' : 'Catégorie nécessaire'}>
+        <Section title={isAr ? 'ما الذي قد يُستخدم' : 'Ce qui peut être utilisé'}>
           <p>
             {isAr
-              ? `${legalStorageInventory.liveCookies[0].name} يُستخدم لتذكر لغة الواجهة. هذا التخزين ضروري لتشغيل تجربة اللغة التي يختارها المستخدم.`
-              : `${legalStorageInventory.liveCookies[0].name} sert à mémoriser la langue d’interface. Ce stockage est nécessaire au fonctionnement de l’expérience de langue choisie par l’utilisateur.`}
+              ? `قد يستعمل الموقع ملف الارتباط ${legalStorageInventory.liveCookies[0].name} لتذكر لغة الواجهة لمدة ${legalStorageInventory.liveCookies[0].durationAr}.`
+              : `Le site peut utiliser le cookie ${legalStorageInventory.liveCookies[0].name} pour mémoriser la langue d’interface pendant ${legalStorageInventory.liveCookies[0].durationFr}.`}
           </p>
           <p>
             {isAr
-              ? 'التدفق الحي الحالي لا يخزن الإحداثيات الخام أو سياق الموقع الدقيق داخل sessionStorage. ويستعمل المتصفح الموقع الجغرافي فقط عندما يختار المستخدم ذلك صراحة.'
-              : "Le flux live actuel ne stocke pas les coordonnées brutes ni le contexte précis de localisation dans sessionStorage. La géolocalisation du navigateur n’est utilisée que lorsque l’utilisateur la déclenche explicitement."}
+              ? `يظهر في الكود أيضاً المفتاح ${legalStorageInventory.legacyLocalStorageCleanup[0].name} فقط كآلية تنظيف لقيمة قديمة، كما يظهر ${legalStorageInventory.dormantCodeStorage[0].name} داخل مكوّن ثانوي غير موصول بالمسار الرئيسي الحالي.`
+              : `Le code montre aussi ${legalStorageInventory.legacyLocalStorageCleanup[0].name} comme mécanisme de nettoyage d’une ancienne valeur, ainsi que ${legalStorageInventory.dormantCodeStorage[0].name} dans un composant secondaire non branché au parcours principal actuel.`}
           </p>
           <p>
             {isAr
-              ? `${legalStorageInventory.legacyLocalStorageCleanup[0].name} يظهر في الكود فقط بغرض حذف قيمة قديمة وعدم إعادة استعمالها تلقائياً.`
-              : `${legalStorageInventory.legacyLocalStorageCleanup[0].name} apparaît dans le code uniquement pour supprimer une ancienne valeur et éviter sa réutilisation automatique.`}
-          </p>
-          <p>
-            {isAr
-              ? `يوجد مفتاح ${legalStorageInventory.dormantCodeStorage[0].name} في مكوّن ثانوي غير موصول بالمسار الرئيسي الحالي، لذلك لا يُعامل هنا كجزء من السلوك الحي الأساسي.`
-              : `La clé ${legalStorageInventory.dormantCodeStorage[0].name} subsiste dans un composant secondaire non branché au parcours principal actuel; elle n’est donc pas traitée ici comme un comportement live principal.`}
+              ? 'قد يستعمل الموقع الجغرافي الدقيق فقط عندما يطلبه المستخدم صراحة، كما قد تُحمّل أدوات القياس والأداء من Vercel في الإنتاج إذا كانت مفعلة.'
+              : 'La géolocalisation précise n’est utilisée que sur action explicite de l’utilisateur. Des outils Vercel de mesure d’audience et de performance peuvent aussi être chargés en production s’ils sont activés.'}
           </p>
         </Section>
 
-        <Section title={isAr ? 'الفئة التحليلية' : 'Catégorie analytique'}>
+        <Section title={isAr ? 'الفئات' : 'Catégories'}>
           <p>
             {isAr
-              ? 'يحمّل الموقع Vercel Analytics وVercel Speed Insights في الإنتاج فقط. هذه الأدوات تدخل في فئة القياس التحليلي أو قياس الأداء، ويجب على المشغّل تقييم ما إذا كانت تحتاج إلى آلية موافقة إضافية وفق وضعه القانوني.'
-              : 'Le site charge Vercel Analytics et Vercel Speed Insights uniquement en production. Ces outils relèvent de la mesure d’audience ou de performance, et l’exploitant doit évaluer si un mécanisme de consentement supplémentaire est requis selon sa situation juridique.'}
+              ? 'الفئات المرصودة حالياً هي: تخزين ضروري للغة الواجهة، عناصر تقنية لتنظيف تخزين قديم، وقياس للزيارة أو الأداء إذا كانت أدوات Vercel مفعلة.'
+              : 'Les catégories actuellement repérables sont: stockage nécessaire pour la langue, éléments techniques de nettoyage d’un ancien stockage, et mesure d’audience ou de performance si les outils Vercel sont activés.'}
           </p>
           <p>
             {isAr
-              ? 'الكود الظاهر لا يسمي ملفات ارتباط تحليلية محددة بالاسم. وإذا كانت هذه الأدوات تنشئ معرفات أو تخزيناً إضافياً في بيئة الإنتاج، فيجب على المشغّل تأكيد ذلك في النشر الفعلي.'
-              : "Le code visible ne nomme pas de cookies analytiques précis. Si ces outils créent des identifiants ou stockages supplémentaires en production, l’exploitant doit le confirmer dans l’environnement réellement déployé."}
+              ? 'تشمل الأدوات المذكورة في الكود الحالي: Vercel Analytics و Vercel Speed Insights عند تفعيلهما في الإنتاج.'
+              : 'Les outils explicitement visibles dans le code actuel sont Vercel Analytics et Vercel Speed Insights lorsqu’ils sont activés en production.'}
           </p>
+          <p>
+            {isAr
+              ? 'لا تُذكر في الكود الحالي ملفات ارتباط تحليلية مسماة بشكل صريح. وإذا كانت أدوات الإنتاج تودع معرفات أو تخزينات إضافية، فيجب تأكيد ذلك من طرف المشغّل.'
+              : 'Le code actuel ne nomme pas de cookies analytiques précis. Si l’environnement de production dépose des identifiants ou stockages supplémentaires, l’exploitant doit le confirmer.'}
+          </p>
+        </Section>
+
+        <Section title={isAr ? 'اختيارات المستخدم' : 'Choix de l’utilisateur'}>
+          <p>
+            {isAr
+              ? 'يمكن للمستخدم حذف ملف لغة الواجهة أو التخزين المحلي من إعدادات المتصفح، كما يمكنه رفض مشاركة الموقع الجغرافي الدقيق.'
+              : 'L’utilisateur peut supprimer le cookie de langue ou les stockages locaux depuis les réglages du navigateur. Il peut aussi refuser la géolocalisation précise.'}
+          </p>
+          <p>
+            {isAr
+              ? 'لا توجد حالياً داخل الموقع واجهة مستقلة لإدارة موافقة تحليلية.'
+              : 'Le site ne présente pas actuellement d’interface autonome de gestion du consentement analytique.'}
+          </p>
+        </Section>
+
+        <Section title={isAr ? 'تنبيه التوافق مع التنفيذ' : 'Avertissement d’alignement'}>
+          <p>
+            {isAr
+              ? 'هذه الصفحة تصف ما يظهر في الكود الحالي، لكن البيئة المنشورة فعلياً قد تختلف في بعض التفاصيل التقنية.'
+              : 'Cette page décrit ce qui est visible dans le code actuel, mais l’environnement effectivement déployé peut différer sur certains points techniques.'}
+          </p>
+          <p>{legalPlaceholders.productionCookieAudit}</p>
           <p>{legalPlaceholders.cndpReference}</p>
-        </Section>
-
-        <Section title={isAr ? 'الموقع الجغرافي' : 'Géolocalisation'}>
-          <p>{isAr ? legalStorageInventory.geolocation.purposeAr : legalStorageInventory.geolocation.purposeFr}</p>
-          <p>{isAr ? legalStorageInventory.geolocation.transientHandlingAr : legalStorageInventory.geolocation.transientHandlingFr}</p>
-        </Section>
-
-        <Section title={isAr ? 'ما الذي لا يظهر في الكود حالياً' : 'Ce qui n’apparaît pas dans le code actuellement'}>
-          <p>
-            {isAr
-              ? 'لا تظهر في الكود الحالي منطق إعلانات مخصصة، أو أدوات إعادة استهداف، أو ملف تعريف ارتباط تسويقي واضح. لذلك لا تدعي هذه الصفحة وجود فئات تسويقية غير مرصودة فعلاً.'
-              : 'Le code actuel ne montre pas de logique de publicité personnalisée, de retargeting ni de cookie marketing clairement identifié. Cette page ne crée donc pas artificiellement de catégorie marketing non observée.'}
-          </p>
-        </Section>
-
-        <Section title={isAr ? 'كيف يغيّر المستخدم اختياراته' : 'Comment modifier ses choix'}>
-          <p>
-            {isAr
-              ? 'يمكن للمستخدم حذف ملف لغة الواجهة أو التخزين المحلي من إعدادات المتصفح. ويمكنه أيضاً رفض مشاركة الموقع الجغرافي الدقيق عبر المتصفح.'
-              : 'L’utilisateur peut supprimer le cookie de langue ou les stockages locaux depuis les réglages du navigateur. Il peut également refuser le partage de sa géolocalisation précise via le navigateur.'}
-          </p>
-          <p>
-            {isAr
-              ? 'لا توجد حالياً واجهة مستقلة لإدارة الموافقة التحليلية داخل الموقع. يجب على المشغّل تأكيد ما إذا كانت هناك حاجة إلى هذا السطح القانوني الإضافي قبل mise en ligne définitive.'
-              : 'Il n’existe pas actuellement d’interface autonome de gestion du consentement analytique dans le site. L’exploitant doit confirmer si une telle surface est nécessaire avant mise en ligne définitive.'}
-          </p>
         </Section>
       </div>
     </div>

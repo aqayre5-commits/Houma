@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { SiteWideDisclaimer } from '@/components/site-wide-disclaimer'
 import { getCurrentLocale, getDir } from '@/lib/lang'
 import { getMetadataBase } from '@/lib/seo'
 
@@ -47,6 +48,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body className={isAr ? 'font-arabic' : ''}>
         <Header lang={lang} />
         <main>{children}</main>
+        <SiteWideDisclaimer lang={lang} />
         <Footer lang={lang} />
         {enableVercelRuntimeScripts ? <Analytics /> : null}
         {enableVercelRuntimeScripts ? <SpeedInsights /> : null}

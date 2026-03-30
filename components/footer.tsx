@@ -32,6 +32,7 @@ export function Footer({ lang = 'fr' }: { lang?: Lang }) {
               <Link href={routes.legalNotice()} className="hover:text-teal-700">{t.footerLegalNotice}</Link>
               <Link href={routes.privacy()} className="hover:text-teal-700">{t.footerPrivacy}</Link>
               <Link href={routes.cookies()} className="hover:text-teal-700">{t.footerCookies}</Link>
+              <Link href={routes.methodology()} className="hover:text-teal-700">{t.footerMethodology}</Link>
             </nav>
           </div>
         </div>

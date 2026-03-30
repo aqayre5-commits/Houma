@@ -44,6 +44,7 @@ export function WhereToGoCard({
   supportingOffice?: OfficeRecord | null
 }) {
   const isAr = lang === 'ar'
+  const legalLines = isAr ? siteLegalDisclaimers.serviceAr : siteLegalDisclaimers.serviceFr
   const stateTone =
     state === 'success'
       ? 'border-teal-300 bg-[var(--surface)] shadow-sm'
@@ -116,8 +117,8 @@ export function WhereToGoCard({
         </div>
       ) : null}
 
-      {officialSourceUrl ? (
-        <div className="mt-4">
+      <div className="mt-4 border-t border-slate-200 pt-4">
+        {officialSourceUrl ? (
           <a
             href={officialSourceUrl}
             target="_blank"
@@ -126,14 +127,18 @@ export function WhereToGoCard({
           >
             {isAr ? 'المصدر الرسمي' : 'Source officielle'}: {officialSourceLabel ?? officialSourceUrl} ↗
           </a>
-          <p className="mt-2 text-sm text-slate-600">
-            {isAr ? siteLegalDisclaimers.serviceAr : siteLegalDisclaimers.serviceFr}
-          </p>
-          <p className="mt-1 text-sm font-medium text-slate-700">
-            {isAr ? siteLegalDisclaimers.verifyAr : siteLegalDisclaimers.verifyFr}
-          </p>
+        ) : null}
+        <div className={officialSourceUrl ? 'mt-2 space-y-1' : 'space-y-1'}>
+          {legalLines.map((line, index) => (
+            <p
+              key={line}
+              className={index === legalLines.length - 1 ? 'text-sm font-medium text-slate-700' : 'text-sm text-slate-600'}
+            >
+              {line}
+            </p>
+          ))}
         </div>
-      ) : null}
+      </div>
     </section>
   )
 }

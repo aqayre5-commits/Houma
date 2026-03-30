@@ -56,56 +56,56 @@ export const aboutPageCopy = {
 
 export const methodologyPageCopy = {
   introFr:
-    "Les pages Houma sont rédigées à partir de sources officielles marocaines puis restructurées pour aider l'usager à comprendre les documents requis, le déroulement de la demande et le niveau d'administration locale concerné.",
+    'Houma compile des informations pratiques à partir de sources publiques et officielles pour aider à préparer une démarche.',
   introAr:
-    'تُحرَّر صفحات Houma انطلاقاً من مصادر رسمية مغربية ثم يُعاد تنظيمها لمساعدة المستعمل على فهم الوثائق المطلوبة، ومسار الطلب، ومستوى الإدارة المحلية المعنية.',
+    'يجمع Houma معلومات عملية انطلاقاً من مصادر عمومية ورسمية لمساعدة المستخدم على التحضير للإجراء.',
   sectionsFr: [
     {
-      title: 'Collecte des sources',
+      title: 'Informations compilées',
       body:
-        "Chaque page part d'une ou plusieurs sources officielles: portail national, ministère, administration spécialisée, service fiscal, collectivité territoriale ou plateforme institutionnelle. Les liens vers ces sources restent visibles sur les pages concernées.",
+        'Houma résume la procédure, les pièces à préparer, les frais indicatifs, les délais et l’autorité locale la plus probable à partir de sources publiques et officielles.',
     },
     {
-      title: 'Réécriture utile pour l’usager',
+      title: 'Site non officiel',
       body:
-        "Le contenu n'est pas reproduit tel quel. Il est réécrit pour répondre à des questions concrètes: quels documents préparer, quelles étapes suivre, où déposer la demande, combien payer, quel délai prévoir, et quand le contexte local change réellement la réponse.",
+        'Houma est un guide privé et non officiel. Le site ne remplace pas l’administration et ne dépose pas de demande pour l’utilisateur.',
     },
     {
-      title: "Gestion de l'incertitude",
+      title: 'Source officielle',
       body:
-        "Lorsque Houma ne peut pas confirmer une autorité locale précise, le site affiche un niveau de réponse plus prudent, par exemple au niveau ville. L'objectif est d'éviter la fausse certitude et de ne pas attribuer à tort une compétence locale fragile ou non vérifiée.",
+        'Une source officielle désigne ici un portail national, un site ministériel, une collectivité, une administration spécialisée ou une plateforme institutionnelle citée sur la page.',
     },
     {
-      title: 'Mise à jour et correction',
+      title: 'Vérification avant action',
       body:
-        "Les données sont revues à partir des changements détectés sur les sources officielles et des retours reçus via le formulaire de correction. Si une administration applique une règle différente sur place, l'information officielle la plus récente prévaut sur le résumé éditorial affiché sur Houma.",
+        'Avant un déplacement ou un paiement, l’utilisateur doit vérifier la source officielle affichée sur la page et confirmer les conditions applicables à sa situation.',
     },
   ],
   sectionsAr: [
     {
-      title: 'جمع المصادر',
+      title: 'معلومات مجمعة',
       body:
-        'تنطلق كل صفحة من مصدر رسمي واحد أو أكثر: بوابة وطنية أو وزارة أو إدارة متخصصة أو مصلحة ضريبية أو جماعة ترابية أو منصة مؤسساتية. وتبقى روابط هذه المصادر ظاهرة في الصفحات المعنية.',
+        'يلخص Houma المسطرة والوثائق الواجب إعدادها والرسوم التقريبية والآجال والسلطة المحلية الأرجح انطلاقاً من مصادر عمومية ورسمية.',
     },
     {
-      title: 'إعادة تحرير مفيدة للمستعمل',
+      title: 'موقع غير رسمي',
       body:
-        'لا يُنقل المحتوى كما هو، بل يُعاد تحريره ليجيب عن أسئلة عملية: ما الوثائق التي يجب إعدادها، ما الخطوات التي ينبغي اتباعها، أين يودع الطلب، كم سأدفع، ما الأجل المتوقع، ومتى يغيّر السياق المحلي الجواب فعلاً.',
+        'Houma دليل خاص وغير رسمي. لا يعوض الموقع الإدارة ولا يودع الطلب نيابة عن المستخدم.',
     },
     {
-      title: 'تدبير عدم اليقين',
+      title: 'ما هو المصدر الرسمي',
       body:
-        'عندما لا تستطيع Houma تأكيد سلطة محلية محددة، يعرض الموقع مستوى جواب أكثر حذراً، مثلاً على مستوى المدينة. فالهدف هو تجنب اليقين الزائف وعدم نسبة اختصاص محلي على نحو غير متحقق أو هش.',
+        'المصدر الرسمي هنا هو بوابة وطنية أو موقع وزارة أو جماعة أو إدارة متخصصة أو منصة مؤسساتية مذكورة في الصفحة.',
     },
     {
-      title: 'التحديث والتصحيح',
+      title: 'التحقق قبل الإجراء',
       body:
-        'تُراجع المعطيات انطلاقاً من التغييرات المرصودة في المصادر الرسمية ومن الملاحظات الواردة عبر نموذج التصحيح. وإذا طبقت إدارة قاعدة مختلفة في الواقع، فإن أحدث معلومة رسمية هي التي تُعتمد على الملخص التحريري المعروض في Houma.',
+        'قبل أي تنقل أو أداء، يجب على المستخدم التحقق من المصدر الرسمي المعروض في الصفحة وتأكيد الشروط المطبقة على حالته.',
     },
   ],
 }
 
 export const sourcePageCopy = {
-  introFr: 'Les listes de documents, les frais, les étapes et les liens externes affichés sur Houma sont rattachés à une source officielle dès qu’elle est disponible.',
-  introAr: 'ترتبط لوائح الوثائق والرسوم والخطوات والروابط الخارجية المعروضة في Houma بمصدر رسمي كلما كان ذلك متاحاً.',
+  introFr: 'Houma rattache ses explications à une source publique ou officielle visible sur la page dès qu’elle est disponible.',
+  introAr: 'يربط Houma شروحه بمصدر عمومي أو رسمي ظاهر في الصفحة كلما كان ذلك متاحاً.',
 }

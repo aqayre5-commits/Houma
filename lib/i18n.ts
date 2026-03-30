@@ -51,7 +51,7 @@ const translations = {
     step3: 'Consultez l\'adresse et les horaires du bureau compétent.',
     allDemarches: 'Toutes les démarches',
     // Footer
-    footerTagline: "Guide privé, non officiel, pour comprendre les documents, les étapes et l'autorité locale à vérifier avant de contacter l'administration.",
+    footerTagline: 'Guide privé, non officiel. Informations préparatoires à partir de sources publiques et officielles.',
     footerExplore: 'Explorer',
     footerResources: 'Ressources',
     footerCities: 'Villes',
@@ -123,7 +123,7 @@ const translations = {
     step3: 'راجع عنوان المكتب المختص وأوقات عمله.',
     allDemarches: 'جميع الإجراءات',
     // Footer
-    footerTagline: 'دليل خاص وغير رسمي لفهم الوثائق والخطوات والسلطة المحلية التي ينبغي التحقق منها قبل التواصل مع الإدارة.',
+    footerTagline: 'دليل خاص وغير رسمي. معلومات تحضيرية مبنية على مصادر عمومية ورسمية.',
     footerExplore: 'استكشاف',
     footerResources: 'الموارد',
     footerCities: 'المدن',
