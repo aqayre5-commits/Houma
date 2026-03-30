@@ -48,8 +48,9 @@
   --success: #2f855a;
   --warn: #b7791f;
   --danger: #b91c1c;
-  --radius: 1rem;
+  --radius: 0.35rem;
   --shadow: 0 1px 0 rgba(30, 41, 59, 0.04), 0 2px 8px rgba(82, 63, 30, 0.07), 0 14px 34px rgba(82, 63, 30, 0.09);
+  --shape-radius: 0.35rem;
 }
 
 html {
@@ -87,14 +88,14 @@ body {
 .card {
   border: 1px solid var(--line);
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--shape-radius);
   box-shadow: var(--shadow);
 }
 
 .card-flat {
   border: 1px solid var(--line);
   background: var(--surface);
-  border-radius: var(--radius);
+  border-radius: var(--shape-radius);
   box-shadow: 0 1px 0 rgba(30, 41, 59, 0.03), 0 4px 12px rgba(82, 63, 30, 0.05);
 }
 
@@ -103,7 +104,7 @@ body {
 .badge {
   display: inline-flex;
   align-items: center;
-  border-radius: 9999px;
+  border-radius: var(--shape-radius);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -129,7 +130,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
+  border-radius: var(--shape-radius);
   font-size: 0.875rem;
   font-weight: 500;
   padding: 0.625rem 1.25rem;
@@ -163,8 +164,18 @@ body {
   width: 1.1rem;
   height: 1.1rem;
   margin-top: 0.15rem;
-  border-radius: 9999px;
+  border-radius: var(--shape-radius);
   border: 1.5px solid var(--brand);
+}
+
+/* ── Rectangular UI override ─────────────────────────────────────────────── */
+
+.rounded-full,
+.rounded-3xl,
+.rounded-2xl,
+.rounded-xl,
+.rounded-lg {
+  border-radius: var(--shape-radius) !important;
 }
 
 /* ── Ads placeholder ─────────────────────────────────────────────────────── */
