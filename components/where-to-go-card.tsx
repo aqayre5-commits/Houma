@@ -1,6 +1,7 @@
 'use client'
 
 import { ServiceAreaPicker } from '@/components/service-area-picker'
+import { siteLegalDisclaimers } from '@/content/legal-copy'
 import type { Lang } from '@/lib/lang'
 import type { OfficeRecord } from '@/types/models'
 
@@ -125,6 +126,12 @@ export function WhereToGoCard({
           >
             {isAr ? 'المصدر الرسمي' : 'Source officielle'}: {officialSourceLabel ?? officialSourceUrl} ↗
           </a>
+          <p className="mt-2 text-sm text-slate-600">
+            {isAr ? siteLegalDisclaimers.serviceAr : siteLegalDisclaimers.serviceFr}
+          </p>
+          <p className="mt-1 text-sm font-medium text-slate-700">
+            {isAr ? siteLegalDisclaimers.verifyAr : siteLegalDisclaimers.verifyFr}
+          </p>
         </div>
       ) : null}
     </section>

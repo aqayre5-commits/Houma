@@ -175,7 +175,7 @@ export function LocationDetector() {
               Voir les bureaux proches de chez vous
             </p>
             <p className="text-sm text-teal-800">
-              Votre position (GPS ou adresse IP en secours) nous permet d'identifier votre ville et les bureaux compétents les plus proches. Aucune donnée n'est conservée.
+              Votre position (GPS ou adresse IP en secours) nous permet d'identifier votre ville et les bureaux compétents les plus proches. L'etat de ce module peut etre conserve temporairement pendant la session du navigateur.
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">

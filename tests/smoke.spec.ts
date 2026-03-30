@@ -93,6 +93,20 @@ test('sources/about/methodology pages render', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Méthodologie' })).toBeVisible()
 })
 
+test('cookie and privacy pages reflect active storage and analytics behavior', async ({ page }) => {
+  await page.goto('/cookies')
+  await expect(page.getByRole('heading', { name: 'Politique cookies' })).toBeVisible()
+  await expect(page.getByText('qriba_lang')).toBeVisible()
+  await expect(page.getByText('qriba_confirmed_location_v2')).toBeVisible()
+  await expect(page.getByText('Vercel Analytics')).toBeVisible()
+  await expect(page.getByText('qriba_location_v1')).toBeVisible()
+
+  await page.goto('/confidentialite')
+  await expect(page.getByRole('heading', { name: 'Politique de confidentialité' })).toBeVisible()
+  await expect(page.getByText('sans être conservées comme coordonnées brutes')).toBeVisible()
+  await expect(page.getByText('qriba_confirmed_location_v2')).toBeVisible()
+})
+
 test('critical path: homepage to city-service', async ({ page }) => {
   await page.goto('/')
   await page.getByRole('link', { name: /Passeport marocain/ }).first().click()

@@ -1,4 +1,5 @@
 import { PageViewTracker } from '@/components/page-view-tracker'
+import { siteLegalDisclaimers } from '@/content/legal-copy'
 import { getAboutData } from '@/lib/content'
 import { getLang } from '@/lib/lang'
 import { buildMetadata } from '@/lib/seo'
@@ -30,6 +31,14 @@ export default async function AboutPage() {
       <div className="max-w-3xl">
         <h1 className="text-3xl font-semibold">{isAr ? 'حول Houma' : 'À propos'}</h1>
         <p className="mt-3 text-lg leading-relaxed text-slate-600">{isAr ? data.copy.introAr : data.copy.introFr}</p>
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
+          <p className="font-semibold">{isAr ? siteLegalDisclaimers.homeAr : siteLegalDisclaimers.homeFr}</p>
+          <p className="mt-1">
+            {isAr
+              ? 'لا تقدم Houma خدمة إيداع الطلبات نيابة عن المستخدم، ولا تحل محل الإدارة أو الموظف المختص.'
+              : "Houma n'effectue pas le dépôt de la demande pour l'utilisateur et ne remplace ni l'administration ni l'agent compétent."}
+          </p>
+        </div>
       </div>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <div className="card p-5">

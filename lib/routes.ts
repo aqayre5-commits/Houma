@@ -30,6 +30,9 @@ export const routes = {
   guide: (slug: string) => `/guides/${slug}`,
   faq: () => '/faq',
   howItWorks: () => '/comment-ca-marche',
+  legalNotice: () => '/mentions-legales',
+  privacy: () => '/confidentialite',
+  cookies: () => '/cookies',
   cityService: (citySlug: string, serviceSlug: string, options?: RouteLocationOptions) =>
     withLocationParams(`/villes/${citySlug}/demarches/${serviceSlug}`, options),
   neighborhood: (citySlug: string, neighborhoodSlug: string, options?: RouteLocationOptions) =>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { PageViewTracker } from '@/components/page-view-tracker'
+import { siteLegalDisclaimers } from '@/content/legal-copy'
 import { getSourcePageData } from '@/lib/content'
 import { getLang } from '@/lib/lang'
 import { buildMetadata } from '@/lib/seo'
@@ -45,6 +46,14 @@ export default async function SourcesPage() {
         <p className="text-xs font-semibold uppercase tracking-wider text-teal-600">{isAr ? 'الشفافية' : 'Transparence'}</p>
         <h1 className="mt-1.5 text-3xl font-bold text-slate-900 md:text-4xl">{isAr ? 'المصادر الرسمية' : 'Sources officielles'}</h1>
         <p className="mt-3 max-w-2xl text-slate-500">{isAr ? data.copy.introAr : data.copy.introFr}</p>
+        <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
+          <p className="font-semibold">{isAr ? siteLegalDisclaimers.homeAr : siteLegalDisclaimers.homeFr}</p>
+          <p className="mt-1">
+            {isAr
+              ? 'تعرض Houma المصادر التي تُستعمل لشرح الوثائق والخطوات والسلطة المحلية المحتملة، لكنها لا تصبح بذلك بوابة حكومية رسمية أو خدمة إيداع للطلبات.'
+              : "Houma affiche les sources utilisées pour expliquer les documents, les étapes et l'autorité locale la plus probable, sans devenir pour autant un portail gouvernemental officiel ni un service de dépôt de demande."}
+          </p>
+        </div>
       </div>
 
       <div className="space-y-6">
@@ -91,8 +100,8 @@ export default async function SourcesPage() {
         <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">{isAr ? 'تنبيه' : 'Avertissement'}</p>
         <p className="mt-1.5 text-sm text-amber-900">
           {isAr
-            ? 'يبقى الموقع دليلاً خاصاً. راجع المصدر الرسمي عند الشك.'
-            : 'Le site reste un guide privé. Vérifiez la source officielle en cas de doute.'}{' '}
+            ? 'يبقى الموقع دليلاً خاصاً وغير رسمي. راجع المصدر الرسمي عند الشك، وقبل التنقل أو الأداء.'
+            : 'Le site reste un guide privé et non officiel. Vérifiez la source officielle en cas de doute, avant déplacement ou paiement.'}{' '}
           <Link href="/signaler-une-erreur" className="font-medium underline">
             {isAr ? 'الإبلاغ عن خطأ' : 'Signalez une erreur'}
           </Link>

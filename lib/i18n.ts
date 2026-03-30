@@ -64,6 +64,10 @@ const translations = {
     footerAbout: 'À propos',
     footerMethodology: 'Méthodologie',
     footerSources: 'Sources',
+    footerLegal: 'Légal',
+    footerLegalNotice: 'Mentions légales',
+    footerPrivacy: 'Confidentialité',
+    footerCookies: 'Cookies',
     footerNote: 'Houma — Documents, étapes et autorités locales · 3 villes · 17 démarches',
     // Breadcrumb
     breadVilles: 'Villes',
@@ -133,6 +137,10 @@ const translations = {
     footerAbout: 'حول Houma',
     footerMethodology: 'المنهجية',
     footerSources: 'المصادر',
+    footerLegal: 'قانوني',
+    footerLegalNotice: 'البيانات القانونية',
+    footerPrivacy: 'الخصوصية',
+    footerCookies: 'ملفات الارتباط',
     footerNote: 'Houma — الوثائق والخطوات والسلطات المحلية · 3 مدن · 17 إجراءاً',
     // Breadcrumb
     breadVilles: 'المدن',

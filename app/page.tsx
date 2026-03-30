@@ -3,6 +3,7 @@ import { ServiceSearchBlock } from '@/components/service-search-block'
 import { ServiceCard } from '@/components/service-card'
 import { TrustStrip } from '@/components/trust-strip'
 import { getHomepageData, listPublishedServices } from '@/lib/content'
+import { siteLegalDisclaimers } from '@/content/legal-copy'
 import { getLang } from '@/lib/lang'
 import { buildMetadata } from '@/lib/seo'
 import { useT as getT } from '@/lib/i18n'
@@ -42,6 +43,9 @@ export default async function HomePage() {
             {t.heroTitle1}<br className="hidden sm:block" /> {t.heroTitle2}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-slate-500">{t.heroSubtitle}</p>
+          <p className="mt-4 max-w-2xl text-sm font-medium text-slate-600">
+            {isAr ? siteLegalDisclaimers.homeAr : siteLegalDisclaimers.homeFr}
+          </p>
         </div>
       </section>
 

@@ -1,7 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 import { track } from '@/lib/analytics'
+import { routes } from '@/lib/routes'
 
 type Kind = 'issue' | 'sponsor'
 
@@ -89,6 +91,28 @@ export function FormPanel({ kind, action }: { kind: Kind; action: string }) {
       {status === 'error' ? (
         <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800">{error}</div>
       ) : null}
+
+      <p className="text-sm leading-relaxed text-slate-500">
+        {kind === 'issue'
+          ? (
+            <>
+              Les informations envoyées servent uniquement à examiner votre signalement et, si nécessaire, à améliorer le contenu du site. Consultez{' '}
+              <Link href={routes.privacy()} className="font-medium text-teal-700 hover:underline">
+                la page Confidentialité
+              </Link>{' '}
+              pour le détail du traitement.
+            </>
+          )
+          : (
+            <>
+              Les informations envoyées servent uniquement à traiter votre demande de sponsoring et à vous recontacter si nécessaire. Consultez{' '}
+              <Link href={routes.privacy()} className="font-medium text-teal-700 hover:underline">
+                la page Confidentialité
+              </Link>{' '}
+              pour le détail du traitement.
+            </>
+          )}
+      </p>
 
       <button className="rounded-full bg-teal-700 px-5 py-3 text-sm font-medium text-cyan-50" type="submit">
         Envoyer

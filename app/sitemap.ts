@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     map(routes.methodology()),
     map(routes.sources()),
     map(routes.about()),
+    map(routes.legalNotice()),
+    map(routes.privacy()),
+    map(routes.cookies()),
   ]
 
   const cities = listSupportedCities()
