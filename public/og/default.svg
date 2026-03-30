@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#F7F1E3"/>
+  <rect x="60" y="60" width="1080" height="510" rx="40" fill="#FFFDF8" stroke="#D9C8A9" stroke-width="2"/>
+  <circle cx="190" cy="170" r="60" fill="#1F6B4F"/>
+  <path d="M148 178L190 144L232 178" stroke="#FFFDF8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M162 174V222H218V174" stroke="#FFFDF8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M183 222V190H197V222" stroke="#FFFDF8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="340" fill="#1E293B" font-family="Arial, sans-serif" font-size="64" font-weight="700">Houma</text>
+  <text x="120" y="408" fill="#6B7280" font-family="Arial, sans-serif" font-size="32">Le bon bureau local, avant le déplacement.</text>
+  <text x="120" y="470" fill="#1F6B4F" font-family="Arial, sans-serif" font-size="28">Casablanca · Rabat · Tanger</text>
+</svg>

@@ -1,0 +1,159 @@
+{
+  "cities": {
+    "casablanca": {
+      "name": "Casablanca",
+      "region": "Casablanca-Settat",
+      "hero": "Find the right arrondissement, annexe administrative, or national office before you travel.",
+      "seo": "démarches administratives Casablanca",
+      "offices": [
+        "annexe-casablanca-centre",
+        "hay-hassani-annexe"
+      ]
+    },
+    "rabat": {
+      "name": "Rabat",
+      "region": "Rabat-Salé-Kénitra",
+      "hero": "Navigate local offices, pilot welcome units, and practical service routes in Rabat.",
+      "seo": "démarches administratives Rabat",
+      "offices": [
+        "yacoub-el-mansour-annexe",
+        "agdal-riyad-annexe"
+      ]
+    },
+    "tanger": {
+      "name": "Tanger",
+      "region": "Tanger-Tétouan-Al Hoceïma",
+      "hero": "Move from city page to office-ready service instructions in under four clicks.",
+      "seo": "démarches administratives Tanger",
+      "offices": [
+        "beni-makada-annexe",
+        "malabata-annexe"
+      ]
+    }
+  },
+  "services": {
+    "passeport-marocain": {
+      "name": "Passeport marocain",
+      "category": "Identité",
+      "summary": "Prepare e-timbre, form, required documents, then deposit at the annexe administrative or caïdat of residence.",
+      "needs_city": true,
+      "primary_office_type": "annexe_administrative",
+      "online": [
+        "e-timbre",
+        "formulaire"
+      ]
+    },
+    "renouvellement-cnie": {
+      "name": "Renouvellement CNIE",
+      "category": "Identité",
+      "summary": "Local guidance page for CNIE renewal with city-specific office starting points.",
+      "needs_city": true,
+      "primary_office_type": "annexe_administrative",
+      "online": []
+    },
+    "attestation-residence": {
+      "name": "Attestation de résidence",
+      "category": "Attestations",
+      "summary": "Find the correct commune, arrondissement, or annexe administrative for residence proof.",
+      "needs_city": true,
+      "primary_office_type": "commune_annexe",
+      "online": []
+    },
+    "acte-naissance": {
+      "name": "Acte de naissance",
+      "category": "État civil",
+      "summary": "Choose between local civil status office flow and online ordering where available.",
+      "needs_city": true,
+      "primary_office_type": "etat_civil",
+      "online": [
+        "watiqa"
+      ]
+    },
+    "legalisation-signature": {
+      "name": "Légalisation de signature",
+      "category": "Attestations",
+      "summary": "Immediate local-service page focused on where to go, what to bring, and same-day expectations.",
+      "needs_city": true,
+      "primary_office_type": "commune_annexe",
+      "online": []
+    }
+  },
+  "offices": {
+    "annexe-casablanca-centre": {
+      "city": "casablanca",
+      "name": "Annexe Administrative Casablanca Centre",
+      "district": "Centre",
+      "type": "annexe_administrative",
+      "address": "Boulevard Hassan II, Casablanca",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Boulevard+Hassan+II+Casablanca",
+      "services": [
+        "passeport-marocain",
+        "renouvellement-cnie",
+        "legalisation-signature"
+      ]
+    },
+    "hay-hassani-annexe": {
+      "city": "casablanca",
+      "name": "Annexe Administrative Hay Hassani",
+      "district": "Hay Hassani",
+      "type": "annexe_administrative",
+      "address": "Hay Hassani, Casablanca",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hay+Hassani+Casablanca",
+      "services": [
+        "attestation-residence",
+        "acte-naissance",
+        "legalisation-signature"
+      ]
+    },
+    "yacoub-el-mansour-annexe": {
+      "city": "rabat",
+      "name": "Annexe Administrative Yacoub El Mansour",
+      "district": "Yacoub El Mansour",
+      "type": "annexe_administrative",
+      "address": "Yacoub El Mansour, Rabat",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Yacoub+El+Mansour+Rabat",
+      "services": [
+        "passeport-marocain",
+        "attestation-residence",
+        "legalisation-signature"
+      ]
+    },
+    "agdal-riyad-annexe": {
+      "city": "rabat",
+      "name": "Annexe Administrative Agdal Riyad",
+      "district": "Agdal Riyad",
+      "type": "annexe_administrative",
+      "address": "Agdal Riyad, Rabat",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Agdal+Riyad+Rabat",
+      "services": [
+        "renouvellement-cnie",
+        "acte-naissance"
+      ]
+    },
+    "beni-makada-annexe": {
+      "city": "tanger",
+      "name": "Annexe Administrative Beni Makada",
+      "district": "Beni Makada",
+      "type": "annexe_administrative",
+      "address": "Beni Makada, Tanger",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Beni+Makada+Tanger",
+      "services": [
+        "passeport-marocain",
+        "attestation-residence",
+        "legalisation-signature"
+      ]
+    },
+    "malabata-annexe": {
+      "city": "tanger",
+      "name": "Annexe Administrative Malabata",
+      "district": "Malabata",
+      "type": "annexe_administrative",
+      "address": "Malabata, Tanger",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Malabata+Tanger",
+      "services": [
+        "renouvellement-cnie",
+        "acte-naissance"
+      ]
+    }
+  }
+}
