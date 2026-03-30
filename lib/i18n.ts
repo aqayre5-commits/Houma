@@ -51,9 +51,9 @@ const translations = {
     step3: 'Consultez l\'adresse et les horaires du bureau compétent.',
     allDemarches: 'Toutes les démarches',
     // Footer
-    footerTagline: "Site d'information qui aide à préparer les documents et les étapes de demande auprès des autorités locales marocaines décentralisées. Houma ne remplace pas les administrations concernées.",
+    footerTagline: "Guide privé, non officiel, pour comprendre les documents, les étapes et l'autorité locale à vérifier avant de contacter l'administration.",
     footerExplore: 'Explorer',
-    footerGuides: 'Guides',
+    footerResources: 'Ressources',
     footerCities: 'Villes',
     footerServices: 'Démarches',
     footerOffices: 'Bureaux',
@@ -68,7 +68,6 @@ const translations = {
     footerLegalNotice: 'Mentions légales',
     footerPrivacy: 'Confidentialité',
     footerCookies: 'Cookies',
-    footerNote: 'Houma — Documents, étapes et autorités locales · 3 villes · 17 démarches',
     // Breadcrumb
     breadVilles: 'Villes',
     breadDemarches: 'Démarches',
@@ -124,9 +123,9 @@ const translations = {
     step3: 'راجع عنوان المكتب المختص وأوقات عمله.',
     allDemarches: 'جميع الإجراءات',
     // Footer
-    footerTagline: 'موقع معلوماتي يساعد على إعداد الوثائق وفهم خطوات الطلب لدى السلطات المحلية المغربية اللاممركزة. ولا يعوض Houma الإدارات المعنية.',
+    footerTagline: 'دليل خاص وغير رسمي لفهم الوثائق والخطوات والسلطة المحلية التي ينبغي التحقق منها قبل التواصل مع الإدارة.',
     footerExplore: 'استكشاف',
-    footerGuides: 'الأدلة',
+    footerResources: 'الموارد',
     footerCities: 'المدن',
     footerServices: 'الإجراءات',
     footerOffices: 'المكاتب',
@@ -141,7 +140,6 @@ const translations = {
     footerLegalNotice: 'البيانات القانونية',
     footerPrivacy: 'الخصوصية',
     footerCookies: 'ملفات الارتباط',
-    footerNote: 'Houma — الوثائق والخطوات والسلطات المحلية · 3 مدن · 17 إجراءاً',
     // Breadcrumb
     breadVilles: 'المدن',
     breadDemarches: 'الإجراءات',
